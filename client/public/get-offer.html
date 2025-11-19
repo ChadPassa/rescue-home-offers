@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Offer - Rescue Home Offers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+
+        .logo p {
+            color: #c9a961;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .solution-badge {
+            background: #c9a961;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #1a1a2e;
+            text-align: center;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link a:hover {
+            color: #c9a961;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 32px 24px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>RESCUE HOME OFFERS</h1>
+            <p>HOME OF THE SECOND OPINION</p>
+        </div>
+
+        <div id="solution-badge" class="solution-badge"></div>
+
+        <h2>GET YOUR OFFER</h2>
+        <p class="subtitle">Enter your property address to see your instant offer</p>
+
+        <form id="address-form">
+            <div class="form-group">
+                <label for="address">Property Address</label>
+                <div class="ilist-content"></div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span class="checkmark">✓</span>
+                    <span>100% Secure</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="checkmark">✓</span>
+                    <span>2-Minute Process</span>
+                </div>
+            </div>
+        </form>
+
+        <div class="back-link">
+            <a href="/">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Get solution from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const solution = urlParams.get('solution') || 'Your Solution';
+        const situation = urlParams.get('situation') || '';
+        const timeline = urlParams.get('timeline') || '';
+        const priority = urlParams.get('priority') || '';
+
+        // Display solution badge
+        document.getElementById('solution-badge').textContent = `Selected: ${solution}`;
+
+        // Store data for webhook
+        window.calculatorData = {
+            solution: solution,
+            situation: situation,
+            timeline: timeline,
+            priority: priority,
+            timestamp: new Date().toISOString()
+        };
+    </script>
+
+    <!-- FlowClosePro Script -->
+    <script src="https://chad.flowclosepro.com/scripts/falcon/auto-address.js?v=2.01"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- FlowClosePro Address Capture Modal -->
+<div id="flowclose-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: #fff; border-radius: 12px; padding: 40px; max-width: 500px; width: 90%; position: relative;">
+        <button onclick="closeFlowCloseModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; font-size: 28px; cursor: pointer; color: #666;">&times;</button>
+        
+        <div style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #1a1a2e;">GET YOUR OFFER</div>
+        <div style="text-align: center; color: #666; margin-bottom: 30px;">Enter your property address to see your instant offer</div>
+        
+        <form id="flowclose-form" onsubmit="return false;">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #333;">Property Address</label>
+                <div class="ilist-content"></div>
+            </div>
+            
+            <div style="display: flex; align-items: center; justify-center; gap: 24px; margin-top: 20px; font-size: 14px; color: #666;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0L10.5 5.5L16 6.5L12 10.5L13 16L8 13L3 16L4 10.5L0 6.5L5.5 5.5L8 0Z" fill="#c9a961"/>
+                    </svg>
+                    <span>100% Secure</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" stroke="#c9a961" stroke-width="2" fill="none"/>
+                        <path d="M8 4V8L11 11" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>2-Minute Process</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function openFlowCloseModal() {
+    const modal = document.getElementById('flowclose-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        
+        // Trigger FlowClosePro to reinitialize for the modal's ilist-content
+        setTimeout(() => {
+            // FlowClosePro should auto-initialize any .ilist-content divs
+            // If it doesn't, we may need to manually trigger it
+            console.log('FlowClosePro modal opened');
+        }, 100);
+    }
+}
+
+function closeFlowCloseModal() {
+    const modal = document.getElementById('flowclose-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('flowclose-modal');
+    if (e.target === modal) {
+        closeFlowCloseModal();
+    }
+});
+
+// Make functions globally available
+window.openFlowCloseModal = openFlowCloseModal;
+window.closeFlowCloseModal = closeFlowCloseModal;
+</script>

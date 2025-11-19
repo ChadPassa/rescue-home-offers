@@ -1,0 +1,1128 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Link } from "wouter";
+import { useState, useEffect } from "react";
+import { ArrowRight, CheckCircle2, Clock, DollarSign, Shield, Star, TrendingUp, Users, Home as HomeIcon, Menu, X } from "lucide-react";
+import { scrollToContact } from "@/lib/scrollToContact";
+import { scrollToAddress } from "@/lib/scrollToAddress";
+import { scrollToCalculator } from "@/lib/scrollToCalculator";
+import EmailCapturePopup from "@/components/EmailCapturePopup";
+import Calculator from "@/components/Calculator";
+import ContactForm from "@/components/ContactForm";
+
+
+export default function Home() {
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [rotatingText, setRotatingText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  
+  const phrases = [
+    "WE BUY HOUSES",
+    "SELL YOUR HOUSE FAST",
+    "CASH FOR HOUSES",
+    "HOME SELLING SOLUTIONS"
+  ];
+
+  useEffect(() => {
+    // Typewriter effect
+    const currentPhrase = phrases[phraseIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting && rotatingText === currentPhrase) {
+        // Pause before deleting
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && rotatingText === "") {
+        // Move to next phrase
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
+      } else if (isDeleting) {
+        // Delete one character
+        setRotatingText(currentPhrase.substring(0, rotatingText.length - 1));
+      } else {
+        // Type one character
+        setRotatingText(currentPhrase.substring(0, rotatingText.length + 1));
+      }
+    }, typingSpeed);
+
+    // Cursor blink
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(cursorInterval);
+    };
+  }, [rotatingText, isDeleting, phraseIndex]);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Metro Minimalist Header with Logo */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="container flex h-20 items-center justify-between">
+          {/* Logo in Header - Horizontal Text Format */}
+          <Link href="/">
+            <a className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl md:text-3xl font-black text-[#c9a961]">RESCUE</span>
+                <span className="text-2xl md:text-3xl font-black text-black">HOME OFFERS</span>
+              </div>
+              <div className="text-xs md:text-sm font-bold text-black/70 tracking-wide text-center">HOME OF THE SECOND OPINION</div>
+            </a>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#solutions" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">SOLUTIONS</a>
+            <a href="#how-it-works" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">HOW IT WORKS</a>
+            <a href="#stories" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">SUCCESS STORIES</a>
+            <Link href="/faq"><a className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors">Q&A</a></Link>
+            <Link href="/about"><a className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors">ABOUT</a></Link>
+            <Button onClick={scrollToAddress} size="lg" className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-base px-8 rounded-full shadow-md">
+              GET MY OFFER
+            </Button>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2 text-gray-700 hover:text-[#c9a961] transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+            <nav className="container py-4 flex flex-col gap-4">
+              <a 
+                href="#solutions" 
+                className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                SOLUTIONS
+              </a>
+              <a 
+                href="#how-it-works" 
+                className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                HOW IT WORKS
+              </a>
+              <a 
+                href="#stories" 
+                className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                SUCCESS STORIES
+              </a>
+              <Link href="/faq">
+                <a 
+                  className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Q&A
+                </a>
+              </Link>
+              <Link href="/about">
+                <a 
+                  className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  ABOUT
+                </a>
+              </Link>
+              <Button 
+                onClick={() => {
+                  scrollToAddress();
+                  setMobileMenuOpen(false);
+                }} 
+                size="lg" 
+                className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-base px-8 py-3 rounded-full shadow-md w-full"
+              >
+                GET MY OFFER
+              </Button>
+            </nav>
+          </div>
+        )}
+      </header>
+
+      {/* Hero with Visible Transformation Image */}
+      <section className="relative text-white py-20 md:py-32 overflow-hidden min-h-[700px]">
+        {/* Background Image - FULL VISIBILITY */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0" style={{backgroundImage: 'url(/hero-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+          {/* Light overlay for text readability only on left side */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10"></div>
+        </div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-2xl">
+            {/* Everything Stacked on Left */}
+            <div className="space-y-8">
+
+              {/* Social Proof Badge - Softer */}
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-[#c9a961]/30 rounded-full px-6 py-3 backdrop-blur-sm">
+                <Star className="w-5 h-5 text-[#c9a961] fill-[#c9a961]" />
+                <span className="text-[#c9a961] font-black text-sm">HELPING HOMEOWNERS SINCE 2004</span>
+              </div>
+
+              {/* Main Headline */}
+              <div>
+                <h1 className="text-5xl md:text-7xl font-black leading-none mb-4 text-white">
+                  LAS VEGAS
+                </h1>
+                <div className="h-20 flex items-center">
+                  <h2 className="text-4xl md:text-6xl font-black text-[#c9a961] leading-none flex items-center">
+                    {rotatingText}
+                    <span className={`ml-2 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
+                  </h2>
+                </div>
+              </div>
+
+              {/* Subheadline */}
+              <p className="text-2xl md:text-3xl font-bold text-white/90">
+                Get your cash offer in <span className="text-[#c9a961]">2 minutes.</span><br />
+                Then see the <span className="text-[#c9a961]">full menu of solutions</span> nobody else shows you.
+              </p>
+
+              {/* FlowClosePro Address Widget */}
+              <div id="address-widget" className="flex gap-3 flex-col sm:flex-row max-w-2xl">
+                <div className="ilist-content flex-1"></div>
+                <Button 
+                  onClick={() => {
+                    // Trigger the hidden FlowClosePro submit button
+                    const flowCloseButton = document.querySelector('.ilist-submit-button, .ilist-button, button[class*="ilist"]');
+                    if (flowCloseButton) {
+                      (flowCloseButton as HTMLButtonElement).click();
+                    }
+                  }} 
+                  size="lg" 
+                  className="h-16 bg-[#c9a961] hover:bg-[#b8954f] text-white font-black px-10 text-lg whitespace-nowrap rounded-2xl shadow-lg"
+                >
+                  GET MY OFFER →
+                </Button>
+              </div>
+
+              {/* Trust Indicators - Softer */}
+              <div className="flex flex-wrap gap-6 text-sm font-bold text-white/80">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#4a5f4a]" />
+                  <span>NO OBLIGATION</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#4a5f4a]" />
+                  <span>NO PRESSURE</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#4a5f4a]" />
+                  <span>NO FEES</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar - Metro Minimalist */}
+      <section className="bg-gradient-to-r from-[#c9a961] to-[#b8954f] py-12 shadow-lg">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-black mb-2">322,103</div>
+              <div className="text-sm md:text-base font-bold text-black/80 uppercase">Homeowners Behind on Payments in 2024</div>
+            </div>
+            <div>
+              <div className="text-5xl md:text-6xl font-black text-black mb-2">75%</div>
+              <div className="text-base md:text-lg font-black text-black uppercase">Could Have Been Rescued</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-black mb-2">$12,500</div>
+              <div className="text-sm md:text-base font-bold text-black/80 uppercase">Average Loss When Behind on Payments</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-black mb-2">18+</div>
+              <div className="text-sm md:text-base font-bold text-black/80 uppercase">Years Rescuing Homeowners</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-black mb-2">27%</div>
+              <div className="text-sm md:text-base font-bold text-black/80 uppercase">Of Homes Purchased by Investors (Q1 2025)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Statement */}
+      <section className="py-20 bg-gray-50">
+        <div className="container max-w-5xl text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+            NO HOME SHOULD GO TO THE COURTHOUSE STEPS
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+            Listen, we get it. You're here because you have a problem. We're not trying to convince you of that—<strong>you already know.</strong> 
+            Maybe you're behind on your mortgage. Maybe you inherited a property you don't want. Maybe you're going through a divorce, or you're just a tired landlord who's done.
+          </p>
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-bold">
+            Whatever your situation, there's a solution. And we're here to help you find it.
+          </p>
+        </div>
+      </section>
+
+      {/* Who We Rescue */}
+      <section className="py-20 bg-white">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">WHO WE RESCUE</h2>
+            <p className="text-xl text-gray-800">We solve problems for two types of sellers. Which one are you?</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* LEFT: Distressed Home */}
+            <Card className="border border-gray-200 hover:shadow-xl transition-all rounded-3xl">
+              <CardContent className="p-10">
+                <div className="w-16 h-16 rounded-full bg-[#c9a961]/10 flex items-center justify-center mb-6">
+                  <HomeIcon className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-3xl font-black text-gray-900 mb-4">THE DISTRESSED HOME</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  The <strong>property</strong> is the problem. You might be financially stable, but the house needs work you can't or don't want to do.
+                </p>
+                <div className="space-y-3">
+                  <p className="font-bold text-gray-900 uppercase text-sm">Common Situations:</p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                      <span>Needs major repairs or renovations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                      <span>Outdated and not market-ready</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                      <span>Foundation, roof, or structural issues</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                      <span>Fire, water, or storm damage</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                      <span>Hoarder situation or estate cleanout needed</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* RIGHT: Distressed Homeowner */}
+            <Card className="border border-gray-200 hover:shadow-xl transition-all rounded-3xl">
+              <CardContent className="p-10">
+                <div className="w-16 h-16 rounded-full bg-[#8b4a4a]/10 flex items-center justify-center mb-6">
+                  <Users className="w-8 h-8 text-red-600" />
+                </div>
+                <h3 className="text-3xl font-black text-gray-900 mb-4">THE DISTRESSED HOMEOWNER</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Your <strong>situation</strong> is the problem. The house might be fine, but you're facing a life event that's forcing you to sell fast.
+                </p>
+                <div className="space-y-3">
+                  <p className="font-bold text-gray-900 uppercase text-sm">Common Situations:</p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
+                      <span>Behind on mortgage payments</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
+                      <span>Going through divorce or separation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
+                      <span>Dealing with probate or inherited property</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
+                      <span>Tired landlord ready to be done</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
+                      <span>Job relocation with tight timeline</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center bg-gray-100 rounded-2xl p-10">
+            <p className="text-2xl font-black text-gray-900 mb-4">
+              Sometimes, you're BOTH. And that's okay.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              We have solutions for every scenario. Let us show you all your options.
+            </p>
+            <Link href="/solutions">
+              <Button size="lg" className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-lg px-10">
+                SEE ALL SOLUTIONS →
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* The Rescue Promise - Certified Document Style */}
+      <section className="py-20 bg-gradient-to-br from-[#e5e5e5] to-[#f5f5f5]">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">
+              THE RESCUE PROMISE™
+            </h2>
+            <p className="text-2xl md:text-3xl font-bold mb-4 text-gray-700">
+              What we promise: to treat you <span className="text-[#c9a961]">fair</span>. Here are the rules we play by.
+            </p>
+          </div>
+          
+          {/* Certified Promise Certificate */}
+          <div className="relative bg-white/80 backdrop-blur-sm border-4 border-[#c9a961] p-12 rounded-3xl text-center shadow-2xl mb-12">
+            {/* Certified Badge */}
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+              <div className="w-24 h-24 rounded-full bg-[#c9a961] border-4 border-white shadow-xl flex items-center justify-center">
+                <div className="text-center">
+                  <Shield className="w-10 h-10 text-white mx-auto mb-1" />
+                  <div className="text-xs font-black text-white">CERTIFIED</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* One-Line Promise */}
+            <p className="text-3xl md:text-5xl font-black mb-6 text-gray-900 mt-8">
+              "Your price, our terms. Your terms, our price."
+            </p>
+            
+            {/* Cursive/Handwriting Tagline */}
+            <p className="text-2xl md:text-3xl text-[#c9a961]" style={{fontFamily: 'cursive', fontStyle: 'italic'}}>
+              Fair. Transparent. Honest.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-3xl">
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-black mb-6 text-center text-gray-900">WHAT THIS MEANS</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-gray-700">You want to close in 7 days? We'll make it happen—at our price.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-gray-700">You want top dollar? We'll get you there—on our timeline and terms.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-gray-700">You want to stay in the home for 6 months? We'll structure that—at our price.</p>
+                    </div>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-3xl">
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-black mb-6 text-center text-gray-900">WHY IT'S FAIR</h3>
+                <p className="mb-4 text-gray-700 text-lg">
+                  This isn't harsh. It's <strong>transparent</strong>. Every deal has trade-offs. Speed costs money. Maximum value takes time. Flexibility requires creative structuring.
+                </p>
+                <p className="mb-4 text-gray-700 text-lg">
+                  We're not here to lowball you. We're here to show you <strong>all the options</strong>—with transparent pricing and terms—so you can choose what works best for YOU.
+                </p>
+                <p className="font-black text-[#c9a961] text-lg">
+                  That's The Rescue Promise™.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-3xl md:text-4xl font-black text-gray-900 mb-4">WE SAVE HOMEOWNERS.</p>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              We rescue you from falling behind. We save you from hassle. We save you from financial devastation. 
+              We rescue you from situations that would otherwise destroy your future. <strong>That's not marketing. That's what we do.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section id="stories" className="py-20 bg-gray-50">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">OUR RESCUE SUCCESS STORIES</h2>
+            <p className="text-xl text-gray-800">Real rescues. Real people. Real solutions.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Story 1 */}
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-red-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">The Single Mother Behind on Payments</h3>
+                <p className="text-gray-700 mb-4">
+                  Her husband's addiction led to job loss and mounting debt. She was months behind on her mortgage. We bought her home, saved her equity, 
+                  and when she couldn't find a rental due to bad credit, we called the landlord directly and pre-paid 6 months of rent.
+                </p>
+                <p className="text-sm font-bold text-green-600 mb-4">
+                  ✓ Payments crisis resolved<br />
+                  ✓ Equity saved<br />
+                  ✓ Family housed
+                </p>
+                <Link href="/stories/single-mother">
+                  <Button variant="outline" className="w-full border-2 border-[#c9a961] text-[#c9a961] hover:bg-[#c9a961] hover:text-white font-bold rounded-xl">
+                    Learn More →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Story 2 */}
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">The Disabled Casino Worker</h3>
+                <p className="text-gray-700 mb-4">
+                  Electrocuted on the job, his disability payout was dwindling. We helped him sell, then coached him on buying rental properties 
+                  to create passive income. We gave him the roadmap to financial independence.
+                </p>
+                <p className="text-sm font-bold text-green-600 mb-4">
+                  ✓ Home sold quickly<br />
+                  ✓ Investment strategy provided<br />
+                  ✓ Future secured
+                </p>
+                <Link href="/stories/casino-worker">
+                  <Button variant="outline" className="w-full border-2 border-[#c9a961] text-[#c9a961] hover:bg-[#c9a961] hover:text-white font-bold rounded-xl">
+                    Learn More →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Story 3 */}
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">How We Transform Neighborhoods</h3>
+                <p className="text-gray-700 mb-4">
+                  See a house being renovated on your street? That's money in YOUR pocket. When we flip a property for $10K above market, every neighbor's home value goes up. 
+                  Be patient with the noise and dumpsters—it's temporary. Keep your yard looking good. Welcome the new neighbors. When we succeed, YOU succeed.
+                </p>
+                <p className="text-sm font-bold text-green-600 mb-4">
+                  ✓ Neighborhood equity increased<br />
+                  ✓ Property values rise for everyone<br />
+                  ✓ Communities rebuilt, not destroyed
+                </p>
+                <Link href="/stories/neighborhood-transformation">
+                  <Button variant="outline" className="w-full border-2 border-[#c9a961] text-[#c9a961] hover:bg-[#c9a961] hover:text-white font-bold rounded-xl">
+                    Learn More →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      {/* Calculator Section */}
+      <section id="calculator" className="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              FIND YOUR BEST SOLUTION IN 60 SECONDS
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Most homeowners think they only have 2-3 options. Our <strong className="text-yellow-600">Second Opinion Advantage Calculator</strong> shows you every solution available based on YOUR unique situation.
+            </p>
+          </div>
+          
+          <Calculator 
+            onComplete={(results) => {
+              // When user completes calculator, open EmailCapturePopup
+              setShowEmailPopup(true);
+            }}
+          />
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section id="how-it-works" className="py-20 bg-white">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">HOW IT WORKS</h2>
+            <p className="text-xl text-gray-700">Simple. Transparent. Built around YOU.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full bg-[#c9a961] text-white text-4xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg">
+                1
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-gray-900">GET YOUR INSTANT OFFER</h3>
+              <p className="text-gray-700 text-lg">
+                Enter your address. Get a preliminary cash offer in 2 minutes. No commitment, no pressure—just information.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full bg-[#c9a961] text-white text-4xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg">
+                2
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-gray-900">EXPLORE YOUR OPTIONS</h3>
+              <p className="text-gray-700 text-lg">
+                Schedule a free consultation. We'll show you every option available—cash, traditional, creative financing, and more.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full bg-[#c9a961] text-white text-4xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg">
+                3
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-gray-900">CLOSE ON YOUR TERMS</h3>
+              <p className="text-gray-700 text-lg">
+                You choose the solution. We handle everything. Close in 7 days or 60 days—it's your call.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" onClick={scrollToCalculator} className="bg-yellow-500 hover:bg-yellow-600 text-black font-black text-xl px-12 h-16">
+              START YOUR RESCUE NOW
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Preview */}
+      <section id="solutions" className="py-20 bg-white">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+              THE HOME OF THE SECOND OPINION
+            </h2>
+            <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+              You've probably got a lowball cash offer. You've probably talked to an agent. You think there are only 2-3 options. 
+              <strong> There's not. There's more (most people don't know about).</strong>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {/* Speed & Certainty */}
+            <Card className="border-2 border-gray-900 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center">
+                    <Clock className="w-7 h-7 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-gray-900">SPEED & CERTAINTY</h3>
+                    <p className="text-sm text-gray-800 font-bold">Close fast, move on with your life</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Cash Offer</p>
+                      <p className="text-sm text-gray-800">Close in 7-14 days, sell as-is</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Premier Offer</p>
+                      <p className="text-sm text-gray-800">Top-tier cash for better properties</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Subject-To</p>
+                      <p className="text-sm text-gray-800">We take over your mortgage payments</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Keep Your Home</p>
+                      <p className="text-sm text-gray-800">Stop foreclosure & stay in your home</p>
+                    </div>
+                  </li>
+                </ul>
+                <Link href="/solutions">
+                  <Button className="w-full bg-gray-900 hover:bg-black text-white font-black">
+                    SEE THESE OPTIONS →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Maximize Value */}
+            <Card className="border-2 border-gray-900 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center">
+                    <TrendingUp className="w-7 h-7 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-gray-900">MAXIMIZE VALUE</h3>
+                    <p className="text-sm text-gray-800 font-bold">Get top dollar for your home</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Fix It & List It</p>
+                      <p className="text-sm text-gray-800">We renovate, you get top dollar</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Cash+ Programs</p>
+                      <p className="text-sm text-gray-800">Get advance for repairs, sell for more</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Traditional Listing</p>
+                      <p className="text-sm text-gray-800">Full-service MLS for top dollar</p>
+                    </div>
+                  </li>
+                </ul>
+                <Link href="/solutions">
+                  <Button className="w-full bg-gray-900 hover:bg-black text-white font-black">
+                    SEE THESE OPTIONS →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Flexibility */}
+            <Card className="border-2 border-gray-900 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <Shield className="w-7 h-7 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-gray-900">FLEXIBILITY</h3>
+                    <p className="text-sm text-gray-800 font-bold">Solutions that work on your timeline</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Sell & Leaseback</p>
+                      <p className="text-sm text-gray-800">Get cash now, move later</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Cash Flex</p>
+                      <p className="text-sm text-gray-800">Cash offer with flexible closing</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Trade Up / Freedom Lock</p>
+                      <p className="text-sm text-gray-800">Buy next home before selling</p>
+                    </div>
+                  </li>
+                </ul>
+                <Link href="/solutions">
+                  <Button className="w-full bg-gray-900 hover:bg-black text-white font-black">
+                    SEE THESE OPTIONS →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* DIY */}
+            <Card className="border-2 border-gray-900 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <DollarSign className="w-7 h-7 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-gray-900">DIY SOLUTIONS</h3>
+                    <p className="text-sm text-gray-800 font-bold">For experienced sellers</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">FSBO Support</p>
+                      <p className="text-sm text-gray-800">Tools to sell yourself</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-gray-900">Flat Fee MLS</p>
+                      <p className="text-sm text-gray-800">Maximum exposure, minimal cost</p>
+                    </div>
+                  </li>
+                </ul>
+                <Link href="/solutions">
+                  <Button className="w-full bg-[#c9a961] hover:bg-[#b8954f] text-white font-black rounded-2xl">
+                    SEE THESE OPTIONS →
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center bg-yellow-50 rounded-2xl p-10 border-4 border-yellow-500">
+            <p className="text-2xl font-black text-gray-900 mb-4">
+              This is just the beginning.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Our free ebook reveals creative solutions like Seller Financing, Novation Agreements, and Credit Rescue programs. 
+              Plus, we'll show you the exact questions to ask before signing ANY contract.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/solutions">
+                <Button size="lg" className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-lg px-10">
+                  EXPLORE ALL 11+ SOLUTIONS
+                </Button>
+              </Link>
+              {/* TODO: Add ebook PDF and uncomment */}
+              {/* <Button size="lg" variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-black text-lg px-10">
+                DOWNLOAD FREE EBOOK
+              </Button> */}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Examples - How It Works */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">HOW IT WORKS - REAL EXAMPLES</h2>
+            <p className="text-xl text-gray-800">See exactly how each solution works in practice. <strong>NO OUT-OF-POCKET COST</strong> on most programs.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Example 1: Cash Offer */}
+            <Card className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                  <DollarSign className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Cash Offer</h3>
+                <p className="text-gray-700 mb-4">
+                  Simple and straightforward. We make you a cash offer, you accept, we close in 7-14 days. You get cash and move on.
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Close in 7-14 days</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Sell as-is (no repairs)</p>
+                <p className="text-sm font-bold text-gray-900">✓ Cash in hand</p>
+              </CardContent>
+            </Card>
+
+            {/* Example 2: Fix It & List It */}
+            <Card className="border-2 border-yellow-500 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Fix It & List It</h3>
+                <p className="text-gray-700 mb-4">
+                  We pay for and manage all renovations. When it's done, we list it with a top agent and you sell for top dollar. <strong className="text-yellow-600">NO OUT-OF-POCKET COST.</strong>
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ We pay for renovations</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ You get top dollar</p>
+                <p className="text-sm font-bold text-gray-900">✓ NO OUT-OF-POCKET COST</p>
+              </CardContent>
+            </Card>
+
+            {/* Example 3: Sell & Stay (Leaseback) */}
+            <Card className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <HomeIcon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Sell & Stay</h3>
+                <p className="text-gray-700 mb-4">
+                  Sell your home to us for cash, then live in it as a tenant. Get the cash you need now, move later when you're ready.
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Get cash now</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Stay in your home</p>
+                <p className="text-sm font-bold text-gray-900">✓ Move when ready</p>
+              </CardContent>
+            </Card>
+
+            {/* Example 4: Become the Bank */}
+            <Card className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                  <DollarSign className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Become the Bank</h3>
+                <p className="text-gray-700 mb-4">
+                  We help you hold the note (seller financing) and manage it for you. You get a down payment plus monthly income.
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Down payment upfront</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Monthly passive income</p>
+                <p className="text-sm font-bold text-gray-900">✓ We manage everything</p>
+              </CardContent>
+            </Card>
+
+            {/* Example 5: Equity Rescue */}
+            <Card className="border-2 border-yellow-500 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Equity Rescue</h3>
+                <p className="text-gray-700 mb-4">
+                  We help you invest your equity into your NEXT property at a discount. <strong className="text-orange-600">Make back what you're giving up now.</strong>
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Use equity for next home</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Get discounted property</p>
+                <p className="text-sm font-bold text-gray-900">✓ Even with bad credit</p>
+              </CardContent>
+            </Card>
+
+            {/* Example 6: Partnership Deals */}
+            <Card className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Partnership Deals</h3>
+                <p className="text-gray-700 mb-4">
+                  We partner on the transaction and share the upside. You participate in the profit when we sell.
+                </p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ Share in the profit</p>
+                <p className="text-sm font-bold text-gray-900 mb-2">✓ We handle everything</p>
+                <p className="text-sm font-bold text-gray-900">✓ Win together</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-xl font-bold text-gray-900 mb-6">
+              These are just examples. Every situation is unique. Let's find YOUR best solution.
+            </p>
+            <Link href="/solutions">
+              <Button size="lg" className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-lg px-10">
+                EXPLORE ALL SOLUTIONS →
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      {/* The Relationship Starts Here - Metro Minimalist */}
+      <section className="py-20 bg-gradient-to-br from-[#e5e5e5] to-[#f5f5f5]">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">
+              THE RELATIONSHIP DOESN'T END HERE.<br />
+              IT STARTS HERE.
+            </h2>
+            
+            {/* Partnership Image */}
+            <div className="max-w-3xl mx-auto mb-8 rounded-3xl overflow-hidden shadow-2xl">
+              <img src="/partnership-v3.jpg" alt="Partnership and Trust" className="w-full h-auto" />
+            </div>
+            
+            <p className="text-2xl md:text-3xl font-bold mb-4 text-gray-700">
+              When you sell to us, you're paying a <span className="text-[#c9a961] underline">convenience fee</span> to solve big problems fast.
+            </p>
+            <p className="text-xl md:text-2xl font-bold text-gray-700">
+              But we don't just buy your house and disappear. <span className="font-black text-gray-900">We help you rebuild.</span>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Left: What We Do Now */}
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-3xl">
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-black mb-6 text-center text-gray-900">WE RESCUE YOU TODAY</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-[#4a5f4a] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Stop the Crisis</p>
+                      <p className="text-gray-600">Get you out of a distressed situation fast</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-[#4a5f4a] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Save Your Credit</p>
+                      <p className="text-gray-600">Prevent long-term financial damage</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-[#4a5f4a] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Preserve Your Equity</p>
+                      <p className="text-gray-600">Get cash in hand to move forward</p>
+                    </div>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Right: What We Do Next */}
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-3xl">
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-black mb-6 text-center text-gray-900">WE HELP YOU REBUILD TOMORROW</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Find Your Next Home</p>
+                      <p className="text-gray-600">We help you buy at a discount—even with bad credit</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Invest Your Equity</p>
+                      <p className="text-gray-600">Use your proceeds to get into a better position</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-6 h-6 text-[#c9a961] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-black text-lg text-gray-900">Build Long-Term Wealth</p>
+                      <p className="text-gray-600">Partner with us on future deals and investments</p>
+                    </div>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#2d2d2d] to-[#1a1a1a] text-white p-10 rounded-3xl text-center shadow-2xl">
+            <p className="text-2xl md:text-3xl font-black mb-4">
+              You're giving a concession now. We'll help you GET a concession later.
+            </p>
+            <p className="text-xl md:text-2xl font-bold text-[#c9a961]">
+              It's almost an even trade-off in the big picture.
+            </p>
+            <p className="text-lg mt-4 text-gray-300">
+              You stabilize today. We set you up to win tomorrow. That's what long-term relationships look like.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA - Metro Minimalist */}
+      <section className="py-20 bg-gradient-to-br from-[#2d2d2d] via-[#1a1a1a] to-black text-white">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-6">
+            READY FOR YOUR SECOND OPINION?
+          </h2>
+          <p className="text-xl md:text-2xl text-[#c9a961] font-bold mb-10">
+            The only thing standing between you and a solution is taking the first step.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => setShowEmailPopup(true)} className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-xl px-12 h-16 rounded-2xl shadow-lg">
+              GET MY INSTANT OFFER
+            </Button>
+            <Button size="lg" onClick={scrollToContact} variant="outline" className="border-2 border-[#c9a961] text-[#c9a961] hover:bg-[#c9a961] hover:text-white font-black text-xl px-12 h-16 rounded-2xl">
+              SCHEDULE FREE CONSULTATION
+            </Button>
+          </div>
+          <p className="text-sm text-white/60 mt-8">
+            75% of payment crises could have been prevented. Don't be part of that statistic.
+          </p>
+        </div>
+      </section>
+      {/* Contact Form */}
+      <ContactForm />
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">       <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-black text-lg mb-4">SOLUTIONS</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link href="/solutions"><a className="hover:text-yellow-400">Cash Offers</a></Link></li>
+                <li><Link href="/solutions"><a className="hover:text-yellow-400">Fix & List</a></Link></li>
+                <li><Link href="/solutions"><a className="hover:text-yellow-400">Creative Financing</a></Link></li>
+                <li><Link href="/solutions"><a className="hover:text-yellow-400">Creative Financing</a></Link></li>
+                <li><Link href="/solutions"><a className="hover:text-yellow-400">All Solutions</a></Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-black text-lg mb-4">RESOURCES</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link href="/faq"><a className="hover:text-yellow-400">Q&A</a></Link></li>
+                <li><a href="#" className="hover:text-yellow-400">Free Ebook</a></li>
+                <li><a href="#stories" className="hover:text-yellow-400">Success Stories</a></li>
+                <li><a href="#" className="hover:text-yellow-400">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-black text-lg mb-4">COMPANY</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#" className="hover:text-yellow-400">About Us</a></li>
+                <li><a href="#" className="hover:text-yellow-400">Contact</a></li>
+                <li><a href="#" className="hover:text-yellow-400">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-yellow-400">Terms of Service</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-black text-lg mb-4">CONTACT</h4>
+              <p className="text-sm text-gray-400 mb-2">Phone: (775) 618-2423</p>
+              <p className="text-sm text-gray-400 mb-2">Email: deals@rescuehomeoffers.com</p>
+              <p className="text-sm text-gray-400">Serving homeowners nationwide since 2004</p>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+            <p>© 2025 Rescue Home Offers. All rights reserved. | We rescue distressed homeowners and distressed homes.</p>
+          </div>
+        </div>
+      </footer>
+
+
+      {/* EmailCapturePopup */}
+      <EmailCapturePopup 
+        isOpen={showEmailPopup}
+        onClose={() => setShowEmailPopup(false)}
+      />
+    </div>
+  );
+}
+

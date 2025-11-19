@@ -1,0 +1,85 @@
+/* FlowClosePro Widget Custom Styling */
+
+/* Style the submit button to match site design */
+.ilist-submit-button,
+.ilist-button {
+  display: inline-block !important;
+  background-color: #c9a961 !important;
+  color: white !important;
+  font-weight: 900 !important;
+  font-size: 1rem !important;
+  padding: 1rem 2rem !important;
+  border-radius: 0.75rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s !important;
+  width: 100% !important;
+  margin-top: 0.75rem !important;
+}
+
+.ilist-submit-button:hover,
+.ilist-button:hover {
+  background-color: #b8954f !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ilist-submit-button:disabled,
+.ilist-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Style the address input */
+.txt-search-sell {
+  width: 100% !important;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  background: white !important;
+}
+
+.txt-search-sell:focus {
+  outline: none !important;
+  border-color: #c9a961 !important;
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1) !important;
+}
+
+/* Error message styling */
+.ilist-error {
+  color: #ef4444 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* Loading spinner */
+.ilist-loading {
+  display: inline-block !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-top-color: white !important;
+  border-radius: 50% !important;
+  animation: spin 0.6s linear infinite !important;
+  margin-right: 0.5rem !important;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Form container */
+.ilist-form-container {
+  width: 100% !important;
+}
+
+.ilist-form-group {
+  margin-bottom: 0 !important;
+}
+
+.ilist-button-group {
+  margin-top: 0.75rem !important;
+}
