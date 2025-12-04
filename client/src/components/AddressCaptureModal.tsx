@@ -30,7 +30,7 @@ export default function AddressCaptureModal({ isOpen, onClose }: AddressCaptureM
         } else {
           // If FlowClosePro doesn't have an init function, reload the script
           const script = document.createElement('script');
-          script.src = 'https://chad.flowclosepro.com/scripts/falcon/auto-address.js?v=2.01&t=' + Date.now();
+          script.src = 'https://rescuehomeoffers.flowclosepro.com/scripts/falcon/auto-address.js?v=2.01&t=' + Date.now();
           script.async = true;
           document.body.appendChild(script);
         }

@@ -11,7 +11,7 @@
   function loadFlowClosePro() {
     // Create script element
     const script = document.createElement('script');
-    script.src = 'https://chad.flowclosepro.com/scripts/falcon/auto-web.js?v=2.01';
+    script.src = 'https://rescuehomeoffers.flowclosepro.com/scripts/falcon/auto-web.js?v=2.01';
     script.async = true;
     
     // Append to body
