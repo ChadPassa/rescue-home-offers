@@ -154,19 +154,59 @@ export default function Calculator({ onComplete }: CalculatorProps) {
     setIsSubmitting(true);
     
     try {
+      // Get recommendations first
+      const recommendations = getRecommendations();
+      
+      // Get calculator answer labels
+      const situationLabels: Record<string, string> = {
+        "financial": "I'm facing a financial challenge",
+        "repairs": "My home needs major repairs",
+        "both": "Both - I need to sell fast AND my home needs work",
+        "neither": "Neither - My home is fine, I just want the best deal"
+      };
+      
+      const timelineLabels: Record<string, string> = {
+        "0-60": "0-60 DAYS - I need to move FAST",
+        "60-90": "60-90 DAYS - I have some flexibility",
+        "90+": "90+ DAYS - I want to maximize my profit"
+      };
+      
+      const priorityLabels: Record<string, string> = {
+        "speed": "SPEED & CERTAINTY",
+        "value": "MAXIMUM VALUE",
+        "repairs": "AVOID REPAIRS",
+        "flexibility": "FLEXIBILITY"
+      };
+      
+      // Build custom fields object
+      const customFields: Record<string, string> = {
+        "calc_situation": situationLabels[situation] || situation,
+        "calc_timeline": timelineLabels[timeline] || timeline,
+        "calc_priority": priorityLabels[priority] || priority,
+      };
+      
+      // Add top 3 solutions
+      recommendations.forEach((solutionName, index) => {
+        const solutionDetail = solutionDetails[solutionName as keyof typeof solutionDetails];
+        if (solutionDetail) {
+          customFields[`solution_${index + 1}_title`] = solutionDetail.title;
+          customFields[`solution_${index + 1}_description`] = solutionDetail.description;
+        }
+      });
+      
       // Send to GoHighLevel
       const tags = getGHLTags();
       const result = await submitToGHL({
         email,
         name,
         tags,
+        customFields,
       });
       
       setGhlContactId(result.contactId);
       console.log("Successfully submitted to GHL:", result.contactId);
       
-      // Show results
-      const recommendations = getRecommendations();
+      // Show results (recommendations already calculated above)
       setShowResults(true);
       
       if (onComplete) {

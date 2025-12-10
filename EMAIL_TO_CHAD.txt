@@ -1,0 +1,149 @@
+Subject: 🔑 Your GoHighLevel API Tokens - Complete Access Setup
+
+Hi Chad,
+
+Here are your GoHighLevel API tokens with FULL ACCESS to all your accounts:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔑 AGENCY-LEVEL API TOKEN (Master Key)
+
+Token: pit-f79fe76e-2a2d-4852-831a-430a490d5b8c
+
+✅ WHAT THIS GIVES YOU ACCESS TO:
+
+• ALL 3 Sub-Accounts:
+  1. Chad Passa LLC (ID: cZ77If8UskKmtSlFBzAo)
+  2. Flow Close Pro (ID: QvJQThUJwXM8PzRRg6Gy)
+  3. Rescue Home Offers (ID: yMCGMW3LHecaTwX5vU3v)
+
+• Agency-Level Operations:
+  ✓ Create/edit/delete sub-accounts (locations)
+  ✓ Manage users across all sub-accounts
+  ✓ View/edit SaaS subscriptions
+  ✓ Import/export snapshots (templates)
+  ✓ Manage custom menu links
+  ✓ Access phone numbers & Twilio settings
+  ✓ View marketplace apps & integrations
+  ✓ Manage document contracts
+
+❌ WHAT THIS CANNOT DO:
+  ✗ Create contacts, workflows, or email templates WITHIN sub-accounts
+  ✗ Access location-specific features (campaigns, funnels, automations)
+  ✗ Manage contacts or opportunities within locations
+
+For those, you need location-specific tokens (see below).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔑 RESCUE HOME OFFERS TOKEN (Location-Specific)
+
+Token: pit-0ec610fc-60ff-4c83-adb9-0d6bd907fcd2
+
+✅ WHAT THIS GIVES YOU ACCESS TO:
+
+• Rescue Home Offers Sub-Account ONLY (ID: yMCGMW3LHecaTwX5vU3v)
+
+• Full Location-Level Access (133 scopes):
+  ✓ Create/manage contacts
+  ✓ Create/manage workflows & automations
+  ✓ Create/manage email templates & campaigns
+  ✓ Create/manage forms, funnels, websites
+  ✓ Manage opportunities & pipelines
+  ✓ Access calendars, appointments, bookings
+  ✓ Send emails & SMS
+  ✓ Manage tags, custom fields
+  ✓ Access conversations, reviews
+  ✓ Everything within this location
+
+❌ WHAT THIS CANNOT DO:
+  ✗ Access other sub-accounts (Chad Passa LLC, Flow Close Pro)
+  ✗ Create new sub-accounts
+  ✗ Manage agency-level settings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 QUICK COMPARISON
+
+┌─────────────────────────┬──────────────┬───────────────────┐
+│ Feature                 │ Agency Token │ Location Token    │
+├─────────────────────────┼──────────────┼───────────────────┤
+│ Manage Sub-Accounts     │      ✅      │        ❌         │
+│ Manage Users            │      ✅      │        ❌         │
+│ Create Contacts         │      ❌      │        ✅         │
+│ Create Workflows        │      ❌      │        ✅         │
+│ Send Emails/SMS         │      ❌      │        ✅         │
+│ Manage Campaigns        │      ❌      │        ✅         │
+│ Access All Locations    │      ✅      │        ❌         │
+└─────────────────────────┴──────────────┴───────────────────┘
+
+💡 TL;DR:
+• Agency Token = Manage accounts & users (high-level)
+• Location Token = Manage contacts & automations (day-to-day)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ WHAT'S ALREADY DONE
+
+1. ✅ Email gate deployed on rescuehomeoffers.com
+2. ✅ Calculator sends contacts to GHL with tags
+3. ✅ Duplicate prevention working (updates existing contacts)
+4. ✅ All calculator responses captured as tags
+5. ✅ Code committed to GitHub with backup
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 NEXT STEP: Set Up Email Workflow (5 minutes)
+
+1. Go to Automation → Workflows in GHL
+2. Create New Workflow
+3. Trigger: Contact Tag Added → "offer-calculator"
+4. Action: Send Email → Use template from calculator_email_template.html
+5. Save and Activate
+
+Detailed guide: CALCULATOR_WORKFLOW_SETUP_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔐 SECURITY WARNING
+
+⚠️ KEEP THESE TOKENS SECRET!
+• Never commit to GitHub
+• Never share publicly  
+• Store in .env files when using in code
+• Regenerate if compromised (GHL Settings → Private Integrations)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 DOCUMENTATION FILES
+
+All files saved in: /home/ubuntu/rescue-home-offers/
+
+• GHL_API_COMPLETE_SETUP.md - Complete reference guide
+• CALCULATOR_WORKFLOW_SETUP_GUIDE.md - Step-by-step workflow setup
+• calculator_email_template.html - Email template (ready to use)
+• GHL_TAGS_GUIDE.md - Complete tag reference
+• EMAIL_GATE_IMPLEMENTATION.md - Technical details
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 API DOCUMENTATION
+
+Base URL: https://services.leadconnectorhq.com
+API Docs: https://marketplace.gohighlevel.com/docs
+Version Header: Version: 2021-07-28
+
+Example API Call:
+curl -X GET "https://services.leadconnectorhq.com/contacts/" \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -H "Version: 2021-07-28"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Questions? Let me know!
+
+Best,
+Manus
+
+---
+Last Updated: December 10, 2025

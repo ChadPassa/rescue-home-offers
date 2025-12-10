@@ -1,0 +1,27 @@
+GoHighLevel Private Integration Token
+======================================
+
+Integration Name: Calculator Email Automation - Full API Access
+Created: December 10, 2024
+Permissions: ALL 133 scopes (full access)
+
+TOKEN:
+pit-0ec610fc-60ff-4c83-adb9-0d6bd907fcd2
+
+SECURITY WARNING:
+This token has FULL ACCESS to your GoHighLevel account including:
+- Create/edit/delete workflows
+- Create/edit/delete email templates
+- Create/edit contacts
+- Access all data
+- Modify all settings
+
+DO NOT share this token publicly or with untrusted parties.
+
+USAGE:
+This token will be used to programmatically create:
+1. Email template for calculator completion
+2. Workflow to send email when "offer-calculator" tag is added
+3. Any other automation needed for the calculator
+
+API Documentation: https://marketplace.gohighlevel.com/docs/
