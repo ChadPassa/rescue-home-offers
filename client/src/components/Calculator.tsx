@@ -244,9 +244,22 @@ export default function Calculator({ onComplete }: CalculatorProps) {
       <div className="bg-white rounded-lg p-8 shadow-2xl max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold mb-4">YOUR PERSONALIZED SECOND OPINION</h3>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-4">
             Based on your answers, here are your <strong className="text-yellow-600">TOP 3 RECOMMENDED SOLUTIONS:</strong>
           </p>
+          
+          {/* Instructional guidance */}
+          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg font-semibold text-blue-900 mb-3">📍 Here's What To Do Next:</p>
+            <ol className="text-left text-gray-700 space-y-2 text-base">
+              <li><strong>1. Pick the solution below</strong> that fits you best</li>
+              <li><strong>2. Enter your property address</strong> in that solution's box</li>
+              <li><strong>3. Click "GET OFFER"</strong> and we'll send you <strong>ALL 3 OFFERS</strong></li>
+            </ol>
+            <p className="text-sm text-gray-600 mt-4 italic">
+              💡 Don't stress - you're just choosing your preferred starting point. You'll receive all 3 offers and can change your mind anytime!
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -261,7 +274,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
                 
                 {/* FlowClosePro Address Widget */}
                 <div className="mb-4 bg-white p-4 rounded-lg border-2 border-[#c9a961]">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">Enter your property address:</div>
+                  <div className="text-sm font-semibold text-gray-700 mb-2">👇 Enter your property address to get this offer:</div>
                   <div className="ilist-content" data-solution={rec}></div>
                 </div>
                 
