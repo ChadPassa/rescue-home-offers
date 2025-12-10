@@ -249,16 +249,16 @@ export default function Calculator({ onComplete }: CalculatorProps) {
           </p>
           
           {/* Instructional guidance */}
-          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
-            <p className="text-lg font-semibold text-blue-900 mb-3">📍 Here's What To Do Next:</p>
-            <ol className="text-left text-gray-700 space-y-2 text-base">
-              <li><strong>1. Pick the solution below</strong> that fits you best</li>
-              <li><strong>2. Enter your property address</strong> in that solution's box</li>
-              <li><strong>3. Click "GET OFFER"</strong> and we'll send you <strong>ALL 3 OFFERS</strong></li>
-            </ol>
-            <p className="text-sm text-gray-600 mt-4 italic">
-              💡 Don't stress - you're just choosing your preferred starting point. You'll receive all 3 offers and can change your mind anytime!
+          <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl font-bold text-blue-900 mb-3 text-center">
+              Pick the solution below that fits you best.<br/>
+              Enter your property address now.
             </p>
+            <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4 mt-4">
+              <p className="text-base font-semibold text-gray-800 text-center">
+                💡 You'll receive <strong>ALL 3 OFFERS</strong> regardless of which you choose. You can change your mind anytime!
+              </p>
+            </div>
           </div>
         </div>
 
@@ -719,7 +719,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
                   SAVING YOUR RESULTS...
                 </>
               ) : (
-                "SHOW ME MY SOLUTIONS →"
+                "CONTINUE → SUBMIT MY ADDRESS NEXT"
               )}
             </Button>
 
