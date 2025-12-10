@@ -7,7 +7,7 @@ export const GHL_TAGS = {
     CALCULATOR: "calculator",
     OFFER_CALCULATOR: "offer-calculator",
     ADDRESS_MODAL: "address-modal",
-  }
+  },
   CALCULATOR: {
     SITUATION_FINANCIAL: "calc-situation-financial",
     SITUATION_PROPERTY: "calc-situation-property",
