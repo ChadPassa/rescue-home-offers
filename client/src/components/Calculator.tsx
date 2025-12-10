@@ -607,11 +607,14 @@ export default function Calculator({ onComplete }: CalculatorProps) {
             <p className="text-lg text-gray-700 mb-2">
               We've analyzed your situation and found the perfect solutions for you.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-4">
               Enter your name and email so we can save your results and send you a detailed breakdown of your options.
             </p>
-            <p className="text-sm text-gray-500 mt-4 italic">
-              (You'll enter your property address on the next screen to get your instant offer)
+            <p className="text-base text-gray-700 font-medium">
+              Next, we'll just need your property address to get your instant offers.
+            </p>
+            <p className="text-sm text-gray-500 mt-2 italic">
+              (Use the same email so we can keep everything together!)
             </p>
           </div>
 
