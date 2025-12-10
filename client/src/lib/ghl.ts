@@ -25,11 +25,11 @@ export const GHL_TAGS = {
     PRIORITY_FLEXIBILITY: "calc-priority-flexibility",
     PRIORITY_STAY: "calc-priority-stay",
     
-    // Descriptive label tags (what the user actually sees)
-    LABEL_DISTRESSED_HOMEOWNER: "DISTRESSED HOMEOWNER",
-    LABEL_DISTRESSED_HOME: "DISTRESSED HOME",
-    LABEL_DOUBLE_DISTRESS: "DOUBLE DISTRESS",
-    LABEL_STRATEGIC_SELLER: "STRATEGIC SELLER",
+    // Bold main text tags (what the user actually clicked)
+    LABEL_FINANCIAL_CHALLENGE: "I'm facing a financial challenge",
+    LABEL_NEEDS_REPAIRS: "My home needs major repairs",
+    LABEL_BOTH: "Both - I need to sell fast AND my home needs work",
+    LABEL_NEITHER: "Neither - My home is fine, I just want the best deal",
     
     LABEL_0_60_DAYS: "0-60 DAYS - I need to move FAST",
     LABEL_60_90_DAYS: "60-90 DAYS - I have some flexibility",

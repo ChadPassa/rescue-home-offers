@@ -91,22 +91,22 @@ export default function Calculator({ onComplete }: CalculatorProps) {
   const getGHLTags = () => {
     const tags = [GHL_TAGS.SOURCE.OFFER_CALCULATOR];
     
-    // Add situation tags (technical + descriptive label)
+    // Add situation tags (technical + bold main text)
     if (situation === "financial") {
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
-      tags.push(GHL_TAGS.CALCULATOR.LABEL_DISTRESSED_HOMEOWNER);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_FINANCIAL_CHALLENGE);
     }
     if (situation === "repairs") {
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
-      tags.push(GHL_TAGS.CALCULATOR.LABEL_DISTRESSED_HOME);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_NEEDS_REPAIRS);
     }
     if (situation === "both") {
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
-      tags.push(GHL_TAGS.CALCULATOR.LABEL_DOUBLE_DISTRESS);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_BOTH);
     }
     if (situation === "neither") {
-      tags.push(GHL_TAGS.CALCULATOR.LABEL_STRATEGIC_SELLER);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_NEITHER);
     }
     
     // Add timeline tags (technical + descriptive label)
