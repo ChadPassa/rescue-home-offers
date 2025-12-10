@@ -251,8 +251,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
           {/* Instructional guidance */}
           <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
             <p className="text-xl font-bold text-blue-900 mb-3 text-center">
-              Pick the solution below that fits you best.<br/>
-              Enter your property address now.
+              Pick the solution below that fits you best. Start typing your address and select it from the drop down that auto-populates.
             </p>
             <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4 mt-4">
               <p className="text-base font-semibold text-gray-800 text-center">
