@@ -5,8 +5,9 @@ export const GHL_TAGS = {
     WEBSITE_LEAD: "website-lead",
     HERO_SECTION: "hero-section",
     CALCULATOR: "calculator",
+    OFFER_CALCULATOR: "offer-calculator",
     ADDRESS_MODAL: "address-modal",
-  },
+  }
   CALCULATOR: {
     SITUATION_FINANCIAL: "calc-situation-financial",
     SITUATION_PROPERTY: "calc-situation-property",
@@ -58,7 +59,7 @@ export async function submitToGHL({
   contactId,
 }: SubmitToGHLParams): Promise<{ contactId: string }> {
   const GHL_API_URL = "https://rest.gohighlevel.com/v1/contacts/";
-  const GHL_API_KEY = "YOUR_GHL_API_KEY"; // Replace with actual API key
+  const GHL_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6InlNQ0dNVzNMSGVjYVR3WDV2VTN2IiwiY29tcGFueV9pZCI6Ikx1RDAySXMyQ1hMOTFGM05FUnJwIiwidmVyc2lvbiI6MSwiaWF0IjoxNzAxOTA0Njc5NjY5LCJzdWIiOiJ1c2VyX2lkIn0.z4OSBS4E8WPRx18FSKXpq6yLfJapeEwkfaCtwGqWE6c";
 
   try {
     const payload: any = {

@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { solutionDetails } from "@/data/solutionDetails";
 import { solutionScores } from "@/data/solutionScoring";
-import { ChevronDown, ChevronUp, CheckCircle2, Loader2 } from "lucide-react";
+import { ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import { useFlowClosePro } from "@/hooks/useFlowClosePro";
-import { submitToGHL, GHL_TAGS } from "@/lib/ghl";
 
 // Declare FlowClosePro global function
 declare global {
@@ -36,12 +34,8 @@ export default function Calculator({ onComplete }: CalculatorProps) {
   const [situation, setSituation] = useState("");
   const [timeline, setTimeline] = useState("");
   const [priority, setPriority] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [expandedSolution, setExpandedSolution] = useState<string | null>(null);
-  const [ghlContactId, setGhlContactId] = useState<string>("");
 
   // Initialize FlowClosePro widgets after results are shown
   useEffect(() => {
@@ -88,70 +82,11 @@ export default function Calculator({ onComplete }: CalculatorProps) {
     return topSolutions.map(s => s.name);
   };
 
-  const getGHLTags = () => {
-    const tags = [GHL_TAGS.SOURCE.OFFER_CALCULATOR];
-    
-    // Add situation tag
-    if (situation === "financial") tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
-    if (situation === "repairs") tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
-    if (situation === "both") {
-      tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
-      tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
-    }
-    
-    // Add timeline tag
-    if (timeline === "0-60") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_0_60);
-    if (timeline === "60-90") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_60_120);
-    if (timeline === "90+") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_120_PLUS);
-    
-    // Add priority tag
-    if (priority === "speed") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_SPEED);
-    if (priority === "value") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_VALUE);
-    if (priority === "flexibility") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_FLEXIBILITY);
-    
-    return tags;
-  };
-
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!name || !email) {
-      alert("Please enter your name and email");
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    try {
-      // Send to GoHighLevel
-      const tags = getGHLTags();
-      const result = await submitToGHL({
-        email,
-        name,
-        tags,
-      });
-      
-      setGhlContactId(result.contactId);
-      console.log("Successfully submitted to GHL:", result.contactId);
-      
-      // Show results
-      const recommendations = getRecommendations();
-      setShowResults(true);
-      
-      if (onComplete) {
-        onComplete({ situation, timeline, priority, recommendations });
-      }
-    } catch (error) {
-      console.error("Error submitting to GHL:", error);
-      // Still show results even if GHL fails
-      const recommendations = getRecommendations();
-      setShowResults(true);
-      
-      if (onComplete) {
-        onComplete({ situation, timeline, priority, recommendations });
-      }
-    } finally {
-      setIsSubmitting(false);
+  const handleComplete = () => {
+    const recommendations = getRecommendations();
+    setShowResults(true);
+    if (onComplete) {
+      onComplete({ situation, timeline, priority, recommendations });
     }
   };
 
@@ -160,10 +95,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
     setSituation("");
     setTimeline("");
     setPriority("");
-    setName("");
-    setEmail("");
     setShowResults(false);
-    setGhlContactId("");
   };
 
   if (showResults) {
@@ -335,10 +267,10 @@ export default function Calculator({ onComplete }: CalculatorProps) {
       <div className="mb-8">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-medium text-gray-500">
-            {step < 3 ? `Question ${step + 1} of 3` : 'Save Your Results'}
+            Question {step + 1} of 3
           </span>
           <div className="flex gap-2">
-            {[0, 1, 2, 3].map((i) => (
+            {[0, 1, 2].map((i) => (
               <div
                 key={i}
                 className={`h-2 w-12 rounded-full ${
@@ -497,7 +429,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
             <button
               onClick={() => {
                 setPriority("speed");
-                setStep(3);
+                handleComplete();
               }}
               className="w-full text-left p-6 border-2 border-gray-200 rounded-lg hover:border-yellow-500 hover:bg-yellow-50 transition"
             >
@@ -512,7 +444,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
             <button
               onClick={() => {
                 setPriority("value");
-                setStep(3);
+                handleComplete();
               }}
               className="w-full text-left p-6 border-2 border-gray-200 rounded-lg hover:border-yellow-500 hover:bg-yellow-50 transition"
             >
@@ -527,7 +459,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
             <button
               onClick={() => {
                 setPriority("repairs");
-                setStep(3);
+                handleComplete();
               }}
               className="w-full text-left p-6 border-2 border-gray-200 rounded-lg hover:border-yellow-500 hover:bg-yellow-50 transition"
             >
@@ -542,7 +474,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
             <button
               onClick={() => {
                 setPriority("flexibility");
-                setStep(3);
+                handleComplete();
               }}
               className="w-full text-left p-6 border-2 border-gray-200 rounded-lg hover:border-yellow-500 hover:bg-yellow-50 transition"
             >
@@ -566,90 +498,7 @@ export default function Calculator({ onComplete }: CalculatorProps) {
           </div>
         </div>
       )}
-
-      {step === 3 && (
-        <div>
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">
-              SAVE YOUR PERSONALIZED RECOMMENDATIONS
-            </h3>
-            <p className="text-lg text-gray-700 mb-2">
-              We've analyzed your situation and found the perfect solutions for you.
-            </p>
-            <p className="text-gray-600">
-              Enter your name and email so we can save your results and send you a detailed breakdown of your options.
-            </p>
-            <p className="text-sm text-gray-500 mt-4 italic">
-              (You'll enter your property address on the next screen to get your instant offer)
-            </p>
-          </div>
-
-          <form onSubmit={handleEmailSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                Full Name *
-              </label>
-              <Input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="John Smith"
-                required
-                className="w-full text-lg p-6 border-2 border-gray-300 rounded-lg focus:border-yellow-500 focus:ring-yellow-500"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                Email Address *
-              </label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="john@example.com"
-                required
-                className="w-full text-lg p-6 border-2 border-gray-300 rounded-lg focus:border-yellow-500 focus:ring-yellow-500"
-              />
-            </div>
-
-            <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4">
-              <p className="text-sm text-gray-700">
-                <strong className="text-yellow-700">Why we need this:</strong> We'll save your calculator results and send you a personalized report showing all your options. Your information is secure and we'll never spam you.
-              </p>
-            </div>
-
-            <Button 
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-xl py-6 rounded-lg shadow-lg"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  SAVING YOUR RESULTS...
-                </>
-              ) : (
-                "SHOW ME MY SOLUTIONS →"
-              )}
-            </Button>
-
-            <div className="mt-6">
-              <Button 
-                type="button"
-                variant="outline" 
-                onClick={() => setStep(2)}
-                className="text-gray-600"
-                disabled={isSubmitting}
-              >
-                ← BACK
-              </Button>
-            </div>
-          </form>
-        </div>
-      )}
     </div>
   );
 }
+
