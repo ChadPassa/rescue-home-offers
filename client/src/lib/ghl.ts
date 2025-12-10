@@ -9,6 +9,7 @@ export const GHL_TAGS = {
     ADDRESS_MODAL: "address-modal",
   },
   CALCULATOR: {
+    // Technical tags
     SITUATION_FINANCIAL: "calc-situation-financial",
     SITUATION_PROPERTY: "calc-situation-property",
     SITUATION_LIFE_EVENT: "calc-situation-life-event",
@@ -23,6 +24,21 @@ export const GHL_TAGS = {
     PRIORITY_VALUE: "calc-priority-value",
     PRIORITY_FLEXIBILITY: "calc-priority-flexibility",
     PRIORITY_STAY: "calc-priority-stay",
+    
+    // Descriptive label tags (what the user actually sees)
+    LABEL_DISTRESSED_HOMEOWNER: "DISTRESSED HOMEOWNER",
+    LABEL_DISTRESSED_HOME: "DISTRESSED HOME",
+    LABEL_DOUBLE_DISTRESS: "DOUBLE DISTRESS",
+    LABEL_STRATEGIC_SELLER: "STRATEGIC SELLER",
+    
+    LABEL_0_60_DAYS: "0-60 DAYS - I need to move FAST",
+    LABEL_60_90_DAYS: "60-90 DAYS - I have some flexibility",
+    LABEL_90_PLUS_DAYS: "90+ DAYS - I want to maximize my profit",
+    
+    LABEL_SPEED_CERTAINTY: "SPEED & CERTAINTY",
+    LABEL_MAXIMUM_VALUE: "MAXIMUM VALUE",
+    LABEL_AVOID_REPAIRS: "AVOID REPAIRS",
+    LABEL_FLEXIBILITY: "FLEXIBILITY",
   },
   SOLUTIONS: {
     CASH_OFFER: "cash-offer",
@@ -62,6 +78,31 @@ export async function submitToGHL({
   const GHL_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6InlNQ0dNVzNMSGVjYVR3WDV2VTN2IiwiY29tcGFueV9pZCI6Ikx1RDAySXMyQ1hMOTFGM05FUnJwIiwidmVyc2lvbiI6MSwiaWF0IjoxNzAxOTA0Njc5NjY5LCJzdWIiOiJ1c2VyX2lkIn0.z4OSBS4E8WPRx18FSKXpq6yLfJapeEwkfaCtwGqWE6c";
 
   try {
+    let existingContactId = contactId;
+    
+    // If no contactId provided, search for existing contact by email
+    if (!existingContactId) {
+      try {
+        const searchResponse = await fetch(`${GHL_API_URL}lookup?email=${encodeURIComponent(email)}`, {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${GHL_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        });
+        
+        if (searchResponse.ok) {
+          const searchData = await searchResponse.json();
+          if (searchData.contacts && searchData.contacts.length > 0) {
+            existingContactId = searchData.contacts[0].id;
+            console.log("Found existing contact:", existingContactId);
+          }
+        }
+      } catch (searchError) {
+        console.log("No existing contact found, will create new one");
+      }
+    }
+    
     const payload: any = {
       email,
       tags,
@@ -73,9 +114,10 @@ export async function submitToGHL({
 
     let response;
     
-    if (contactId) {
-      // Update existing contact
-      response = await fetch(`${GHL_API_URL}${contactId}`, {
+    if (existingContactId) {
+      // Update existing contact (merge tags)
+      console.log("Updating existing contact with new tags");
+      response = await fetch(`${GHL_API_URL}${existingContactId}`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${GHL_API_KEY}`,
@@ -85,6 +127,7 @@ export async function submitToGHL({
       });
     } else {
       // Create new contact
+      console.log("Creating new contact");
       response = await fetch(GHL_API_URL, {
         method: "POST",
         headers: {
@@ -100,7 +143,7 @@ export async function submitToGHL({
     }
 
     const data = await response.json();
-    return { contactId: data.contact?.id || contactId || "" };
+    return { contactId: data.contact?.id || existingContactId || "" };
   } catch (error) {
     console.error("Error submitting to GHL:", error);
     throw error;

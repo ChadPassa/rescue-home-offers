@@ -91,23 +91,54 @@ export default function Calculator({ onComplete }: CalculatorProps) {
   const getGHLTags = () => {
     const tags = [GHL_TAGS.SOURCE.OFFER_CALCULATOR];
     
-    // Add situation tag
-    if (situation === "financial") tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
-    if (situation === "repairs") tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
+    // Add situation tags (technical + descriptive label)
+    if (situation === "financial") {
+      tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_DISTRESSED_HOMEOWNER);
+    }
+    if (situation === "repairs") {
+      tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_DISTRESSED_HOME);
+    }
     if (situation === "both") {
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_FINANCIAL);
       tags.push(GHL_TAGS.CALCULATOR.SITUATION_PROPERTY);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_DOUBLE_DISTRESS);
+    }
+    if (situation === "neither") {
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_STRATEGIC_SELLER);
     }
     
-    // Add timeline tag
-    if (timeline === "0-60") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_0_60);
-    if (timeline === "60-90") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_60_120);
-    if (timeline === "90+") tags.push(GHL_TAGS.CALCULATOR.TIMELINE_120_PLUS);
+    // Add timeline tags (technical + descriptive label)
+    if (timeline === "0-60") {
+      tags.push(GHL_TAGS.CALCULATOR.TIMELINE_0_60);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_0_60_DAYS);
+    }
+    if (timeline === "60-90") {
+      tags.push(GHL_TAGS.CALCULATOR.TIMELINE_60_120);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_60_90_DAYS);
+    }
+    if (timeline === "90+") {
+      tags.push(GHL_TAGS.CALCULATOR.TIMELINE_120_PLUS);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_90_PLUS_DAYS);
+    }
     
-    // Add priority tag
-    if (priority === "speed") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_SPEED);
-    if (priority === "value") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_VALUE);
-    if (priority === "flexibility") tags.push(GHL_TAGS.CALCULATOR.PRIORITY_FLEXIBILITY);
+    // Add priority tags (technical + descriptive label)
+    if (priority === "speed") {
+      tags.push(GHL_TAGS.CALCULATOR.PRIORITY_SPEED);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_SPEED_CERTAINTY);
+    }
+    if (priority === "value") {
+      tags.push(GHL_TAGS.CALCULATOR.PRIORITY_VALUE);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_MAXIMUM_VALUE);
+    }
+    if (priority === "repairs") {
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_AVOID_REPAIRS);
+    }
+    if (priority === "flexibility") {
+      tags.push(GHL_TAGS.CALCULATOR.PRIORITY_FLEXIBILITY);
+      tags.push(GHL_TAGS.CALCULATOR.LABEL_FLEXIBILITY);
+    }
     
     return tags;
   };
