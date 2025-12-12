@@ -6,7 +6,7 @@ import { solutionDetails } from "@/data/solutionDetails";
 import { solutionScores } from "@/data/solutionScoring";
 import { ChevronDown, ChevronUp, CheckCircle2, Loader2 } from "lucide-react";
 import { useFlowClosePro } from "@/hooks/useFlowClosePro";
-import { submitToGHL, GHL_TAGS } from "@/lib/ghl";
+import { submitToGHL, sendCalculatorEmail, GHL_TAGS } from "@/lib/ghl";
 
 // Declare FlowClosePro global function
 declare global {
@@ -205,6 +205,25 @@ export default function Calculator({ onComplete }: CalculatorProps) {
       
       setGhlContactId(result.contactId);
       console.log("Successfully submitted to GHL:", result.contactId);
+      
+      // Send calculator completion email
+      const solutions = recommendations.map(solutionName => {
+        const detail = solutionDetails[solutionName as keyof typeof solutionDetails];
+        return {
+          title: detail?.title || solutionName,
+          description: detail?.description || ''
+        };
+      });
+      
+      await sendCalculatorEmail({
+        contactId: result.contactId,
+        email,
+        firstName: name.split(' ')[0], // Get first name
+        situation,
+        timeline,
+        priority,
+        solutions
+      });
       
       // Show results (recommendations already calculated above)
       setShowResults(true);

@@ -153,3 +153,193 @@ export async function submitToGHL({
   }
 }
 
+
+interface SendCalculatorEmailParams {
+  contactId: string;
+  email: string;
+  firstName: string;
+  situation: string;
+  timeline: string;
+  priority: string;
+  solutions: Array<{title: string; description: string}>;
+}
+
+export async function sendCalculatorEmail({
+  contactId,
+  email,
+  firstName,
+  situation,
+  timeline,
+  priority,
+  solutions,
+}: SendCalculatorEmailParams): Promise<boolean> {
+  const GHL_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6InlNQ0dNVzNMSGVjYVR3WDV2VTN2IiwiY29tcGFueV9pZCI6Ikx1RDAySXMyQ1hMOTFGM05FUnJwIiwidmVyc2lvbiI6MSwiaWF0IjoxNzAxOTA0Njc5NjY5LCJzdWIiOiJ1c2VyX2lkIn0.z4OSBS4E8WPRx18FSKXpq6yLfJapeEwkfaCtwGqWE6c";
+  const EDITABLE_EMAIL_TEMPLATE_ID = "6939e71f67a244c26d49b2c4"; // Calculator Completion Email - EDITABLE
+  
+  try {
+    // Send email using GHL template (editable in GHL UI)
+    // Template ID: 6939e71f67a244c26d49b2c4 - "Calculator Completion Email - EDITABLE"
+    const response = await fetch("https://rest.gohighlevel.com/v1/conversations/messages/email", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${GHL_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contactId,
+        templateId: EDITABLE_EMAIL_TEMPLATE_ID,
+        subject: `Your Personalized Home Solutions Are Ready, ${firstName}!`,
+        emailFrom: "info@rescuehomeoffers.com",
+        fromName: "Rescue Home Offers",
+      }),
+    });
+    
+    if (!response.ok) {
+      console.error("Failed to send email:", await response.text());
+      return false;
+    }
+    
+    console.log("✓ Calculator completion email sent successfully");
+    return true;
+  } catch (error) {
+    console.error("Error sending calculator email:", error);
+    return false;
+  }
+}
+
+// NOTE: Email template is now managed in GHL (Template ID: 6939e71f67a244c26d49b2c4)
+// To edit the email, go to GHL > Marketing > Email Templates > "Calculator Completion Email - EDITABLE"
+// The template uses custom fields that are automatically populated when the contact is created
+
+/* REMOVED: buildCalculatorEmailHtml function
+   Email template is now editable in GHL UI for easy updates without code changes
+
+function buildCalculatorEmailHtml_DEPRECATED(
+  firstName: string,
+  situation: string,
+  timeline: string,
+  priority: string,
+  solutions: Array<{title: string; description: string}>
+): string {
+  // Map answer codes to readable text
+  const situationText = {
+    financial: "I'm facing a financial challenge",
+    repairs: "My home needs major repairs",
+    both: "Both - I need to sell fast AND my home needs work",
+    neither: "Neither - My home is fine, I just want the best deal",
+  }[situation] || situation;
+  
+  const timelineText = {
+    "0-60": "0-60 DAYS - I need to move FAST",
+    "60-90": "60-90 DAYS - I have some flexibility",
+    "90+": "90+ DAYS - I want to maximize my profit",
+  }[timeline] || timeline;
+  
+  const priorityText = {
+    speed: "SPEED & CERTAINTY",
+    value: "MAXIMUM VALUE",
+    repairs: "AVOID REPAIRS",
+    flexibility: "FLEXIBILITY",
+  }[priority] || priority;
+  
+  const solutionsHtml = solutions.map((sol, idx) => `
+    <div style="background-color: #f9f9f9; border: 2px solid #c9a961; border-radius: 8px; padding: 20px; margin-bottom: 15px;">
+      <div style="color: #c9a961; font-weight: bold; font-size: 16px; margin-bottom: 10px;">#${idx + 1} RECOMMENDED</div>
+      <h3 style="margin: 0 0 10px 0; color: #333; font-size: 20px;">${sol.title}</h3>
+      <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">${sol.description}</p>
+    </div>
+  `).join('');
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px;">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background-color: #c9a961; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px;">RESCUE HOME OFFERS</h1>
+              <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px;">HOME OF THE SECOND OPINION</p>
+            </td>
+          </tr>
+          
+          <!-- Greeting -->
+          <tr>
+            <td style="padding: 40px 30px 20px 30px;">
+              <h2 style="margin: 0 0 20px 0; color: #333; font-size: 24px;">Hi ${firstName}!</h2>
+              <p style="margin: 0 0 15px 0; color: #666; font-size: 16px; line-height: 1.6;">
+                Thank you for completing our Second Opinion Advantage Calculator. Based on your answers, we've identified the perfect solutions for your situation.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Calculator Answers -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <h3 style="margin: 0 0 15px 0; color: #c9a961; font-size: 18px;">Here's What You Told Us:</h3>
+              <ul style="margin: 0; padding-left: 20px; color: #666; line-height: 1.8;">
+                <li><strong>Your Situation:</strong> ${situationText}</li>
+                <li><strong>Your Timeline:</strong> ${timelineText}</li>
+                <li><strong>Your Priority:</strong> ${priorityText}</li>
+              </ul>
+            </td>
+          </tr>
+          
+          <!-- Solutions -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <h3 style="margin: 0 0 20px 0; color: #c9a961; font-size: 18px;">Your Top 3 Recommended Solutions:</h3>
+              ${solutionsHtml}
+            </td>
+          </tr>
+          
+          <!-- Rescue Promise -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <div style="background-color: #fff9e6; border: 2px solid #c9a961; border-radius: 8px; padding: 20px;">
+                <h3 style="margin: 0 0 10px 0; color: #c9a961; font-size: 18px;">The Rescue Promise™</h3>
+                <p style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: bold;">"Your price, our terms. Your terms, our price."</p>
+                <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">
+                  We're committed to treating you fairly and transparently. Every deal has trade-offs, and we'll show you all your options so you can choose what works best for YOU.
+                </p>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- CTA -->
+          <tr>
+            <td style="padding: 0 30px 40px 30px;">
+              <div style="background-color: #4CAF50; border-radius: 8px; padding: 20px; text-align: center;">
+                <p style="margin: 0 0 10px 0; color: #ffffff; font-size: 20px; font-weight: bold;">🎉 Your Offers Are On The Way!</p>
+                <p style="margin: 0; color: #ffffff; font-size: 14px;">We'll be in touch soon with your personalized offers. Questions? Just reply to this email.</p>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f9f9f9; padding: 20px 30px; text-align: center; border-radius: 0 0 8px 8px;">
+              <p style="margin: 0 0 10px 0; color: #999; font-size: 12px;">
+                Rescue Home Offers | Las Vegas, NV<br>
+                info@rescuehomeoffers.com | (702) XXX-XXXX
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `;
+}
+*/
