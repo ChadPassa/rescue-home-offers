@@ -179,18 +179,19 @@ export async function sendCalculatorEmail({
   try {
     // Send email using GHL template (editable in GHL UI)
     // Template ID: 6939e71f67a244c26d49b2c4 - "Calculator Completion Email - EDITABLE"
-    const response = await fetch("https://rest.gohighlevel.com/v1/conversations/messages/email", {
+    const response = await fetch("https://services.leadconnectorhq.com/conversations/messages", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${GHL_API_KEY}`,
         "Content-Type": "application/json",
+        "Version": "2021-04-15",
       },
       body: JSON.stringify({
+        type: "Email",
         contactId,
         templateId: EDITABLE_EMAIL_TEMPLATE_ID,
         subject: `Your Personalized Home Solutions Are Ready, ${firstName}!`,
         emailFrom: "info@rescuehomeoffers.com",
-        fromName: "Rescue Home Offers",
       }),
     });
     
