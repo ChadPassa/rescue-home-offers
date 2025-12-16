@@ -57,6 +57,35 @@ export const GHL_TAGS = {
   },
 };
 
+// GHL Custom Field IDs - Map field names to their GHL IDs
+const GHL_CUSTOM_FIELD_IDS: Record<string, string> = {
+  "calc_situation": "mh7Pgp850gaa76vZAsMq",
+  "calc_timeline": "YlIWwENCKUH0KpDZc7KB",
+  "calc_priority": "aJuR7VrT9RZmrZsnKgjh",
+  "solution_1_title": "86CvpyXCsOWmqJlQR1kH",
+  "solution_1_description": "7KzKE0YzWRcBsWbIv6PO",
+  "solution_2_title": "tVUgd6iIUNwV6rZ8UZah",
+  "solution_2_description": "jJiPd9R8YwSJ3BxMrEl1",
+  "solution_3_title": "vZQneJD7329FFQva0tlq",
+  "solution_3_description": "sU7YQfQ4doGzpWr5ZpR8",
+};
+
+// Convert custom fields object to GHL API format (array of {id, value})
+function convertCustomFieldsToGHLFormat(customFields: Record<string, string>): Array<{id: string; value: string}> {
+  const result: Array<{id: string; value: string}> = [];
+  
+  for (const [fieldName, value] of Object.entries(customFields)) {
+    const fieldId = GHL_CUSTOM_FIELD_IDS[fieldName];
+    if (fieldId && value) {
+      result.push({ id: fieldId, value });
+    } else {
+      console.warn(`Unknown custom field: ${fieldName} (no ID mapping found)`);
+    }
+  }
+  
+  return result;
+}
+
 interface SubmitToGHLParams {
   email: string;
   address?: string;
@@ -113,7 +142,12 @@ export async function submitToGHL({
     if (address) payload.address1 = address;
     if (phone) payload.phone = phone;
     if (name) payload.name = name;
-    if (customFields) payload.customField = customFields;
+    
+    // Convert custom fields to GHL API format (array of {id, value})
+    if (customFields) {
+      payload.customField = convertCustomFieldsToGHLFormat(customFields);
+      console.log("Custom fields being sent:", payload.customField);
+    }
 
     let response;
     
@@ -211,136 +245,3 @@ export async function sendCalculatorEmail({
 // NOTE: Email template is now managed in GHL (Template ID: 6939e71f67a244c26d49b2c4)
 // To edit the email, go to GHL > Marketing > Email Templates > "Calculator Completion Email - EDITABLE"
 // The template uses custom fields that are automatically populated when the contact is created
-
-/* REMOVED: buildCalculatorEmailHtml function
-   Email template is now editable in GHL UI for easy updates without code changes
-
-function buildCalculatorEmailHtml_DEPRECATED(
-  firstName: string,
-  situation: string,
-  timeline: string,
-  priority: string,
-  solutions: Array<{title: string; description: string}>
-): string {
-  // Map answer codes to readable text
-  const situationText = {
-    financial: "I'm facing a financial challenge",
-    repairs: "My home needs major repairs",
-    both: "Both - I need to sell fast AND my home needs work",
-    neither: "Neither - My home is fine, I just want the best deal",
-  }[situation] || situation;
-  
-  const timelineText = {
-    "0-60": "0-60 DAYS - I need to move FAST",
-    "60-90": "60-90 DAYS - I have some flexibility",
-    "90+": "90+ DAYS - I want to maximize my profit",
-  }[timeline] || timeline;
-  
-  const priorityText = {
-    speed: "SPEED & CERTAINTY",
-    value: "MAXIMUM VALUE",
-    repairs: "AVOID REPAIRS",
-    flexibility: "FLEXIBILITY",
-  }[priority] || priority;
-  
-  const solutionsHtml = solutions.map((sol, idx) => `
-    <div style="background-color: #f9f9f9; border: 2px solid #c9a961; border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-      <div style="color: #c9a961; font-weight: bold; font-size: 16px; margin-bottom: 10px;">#${idx + 1} RECOMMENDED</div>
-      <h3 style="margin: 0 0 10px 0; color: #333; font-size: 20px;">${sol.title}</h3>
-      <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">${sol.description}</p>
-    </div>
-  `).join('');
-  
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5;">
-    <tr>
-      <td align="center" style="padding: 40px 20px;">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px;">
-          
-          <!-- Header -->
-          <tr>
-            <td style="background-color: #c9a961; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px;">RESCUE HOME OFFERS</h1>
-              <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px;">HOME OF THE SECOND OPINION</p>
-            </td>
-          </tr>
-          
-          <!-- Greeting -->
-          <tr>
-            <td style="padding: 40px 30px 20px 30px;">
-              <h2 style="margin: 0 0 20px 0; color: #333; font-size: 24px;">Hi ${firstName}!</h2>
-              <p style="margin: 0 0 15px 0; color: #666; font-size: 16px; line-height: 1.6;">
-                Thank you for completing our Second Opinion Advantage Calculator. Based on your answers, we've identified the perfect solutions for your situation.
-              </p>
-            </td>
-          </tr>
-          
-          <!-- Calculator Answers -->
-          <tr>
-            <td style="padding: 0 30px 30px 30px;">
-              <h3 style="margin: 0 0 15px 0; color: #c9a961; font-size: 18px;">Here's What You Told Us:</h3>
-              <ul style="margin: 0; padding-left: 20px; color: #666; line-height: 1.8;">
-                <li><strong>Your Situation:</strong> ${situationText}</li>
-                <li><strong>Your Timeline:</strong> ${timelineText}</li>
-                <li><strong>Your Priority:</strong> ${priorityText}</li>
-              </ul>
-            </td>
-          </tr>
-          
-          <!-- Solutions -->
-          <tr>
-            <td style="padding: 0 30px 30px 30px;">
-              <h3 style="margin: 0 0 20px 0; color: #c9a961; font-size: 18px;">Your Top 3 Recommended Solutions:</h3>
-              ${solutionsHtml}
-            </td>
-          </tr>
-          
-          <!-- Rescue Promise -->
-          <tr>
-            <td style="padding: 0 30px 30px 30px;">
-              <div style="background-color: #fff9e6; border: 2px solid #c9a961; border-radius: 8px; padding: 20px;">
-                <h3 style="margin: 0 0 10px 0; color: #c9a961; font-size: 18px;">The Rescue Promise™</h3>
-                <p style="margin: 0 0 10px 0; color: #333; font-size: 16px; font-weight: bold;">"Your price, our terms. Your terms, our price."</p>
-                <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">
-                  We're committed to treating you fairly and transparently. Every deal has trade-offs, and we'll show you all your options so you can choose what works best for YOU.
-                </p>
-              </div>
-            </td>
-          </tr>
-          
-          <!-- CTA -->
-          <tr>
-            <td style="padding: 0 30px 40px 30px;">
-              <div style="background-color: #4CAF50; border-radius: 8px; padding: 20px; text-align: center;">
-                <p style="margin: 0 0 10px 0; color: #ffffff; font-size: 20px; font-weight: bold;">🎉 Your Offers Are On The Way!</p>
-                <p style="margin: 0; color: #ffffff; font-size: 14px;">We'll be in touch soon with your personalized offers. Questions? Just reply to this email.</p>
-              </div>
-            </td>
-          </tr>
-          
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #f9f9f9; padding: 20px 30px; text-align: center; border-radius: 0 0 8px 8px;">
-              <p style="margin: 0 0 10px 0; color: #999; font-size: 12px;">
-                Rescue Home Offers | Las Vegas, NV<br>
-                info@rescuehomeoffers.com | (702) XXX-XXXX
-              </p>
-            </td>
-          </tr>
-          
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-  `;
-}
-*/
