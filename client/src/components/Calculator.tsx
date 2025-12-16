@@ -189,8 +189,8 @@ export default function Calculator({ onComplete }: CalculatorProps) {
       recommendations.forEach((solutionName, index) => {
         const solutionDetail = solutionDetails[solutionName as keyof typeof solutionDetails];
         if (solutionDetail) {
-          customFields[`solution_${index + 1}_title`] = solutionDetail.title;
-          customFields[`solution_${index + 1}_description`] = solutionDetail.description;
+          customFields[`solution_${index + 1}_title`] = solutionDetail.name;
+          customFields[`solution_${index + 1}_description`] = solutionDetail.howItWorks;
         }
       });
       
