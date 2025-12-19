@@ -3,7 +3,44 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const blogPosts = [
-  // NEW CLUSTER: Sell House Fast Las Vegas
+  // CLUSTER 2: Market Conditions & Stale Listings (NEW)
+  {
+    id: 'las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now',
+    title: 'Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now',
+    excerpt: 'The Las Vegas housing market is more complicated than the news makes it seem. With a record number of stale listings, sellers need to understand what\'s really going on.',
+    date: 'December 18, 2025',
+    category: 'Market Conditions',
+    isPillar: true
+  },
+  {
+    id: 'why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis',
+    title: 'Why 70% of Homes Are Sitting Unsold: The Stale Listing Crisis',
+    excerpt: 'A staggering 70% of U.S. home listings were considered "stale" in September. In Las Vegas, the average home is now sitting for 72 days.',
+    date: 'December 18, 2025',
+    category: 'Stale Listings'
+  },
+  {
+    id: 'is-your-home-overpriced-how-to-know-when-to-adjust',
+    title: 'Is Your Home Overpriced? How to Know When to Adjust',
+    excerpt: 'Is your Las Vegas home sitting on the market while your neighbors are selling? With 70% of listings going stale, it\'s time for a reality check.',
+    date: 'December 18, 2025',
+    category: 'Pricing Strategy'
+  },
+  {
+    id: 'when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options',
+    title: 'When Your Listing Goes Stale: Your Other Options',
+    excerpt: 'You put your home on the market expecting a quick sale. Now it\'s been 60+ days with crickets. Here are your options beyond waiting and hoping.',
+    date: 'December 18, 2025',
+    category: 'Selling Options'
+  },
+  {
+    id: 'hidden-costs-stale-listing',
+    title: 'The Hidden Costs of a Stale Listing (What Your Agent Won\'t Tell You)',
+    excerpt: 'Your home has been on the market for months, and your agent\'s only solution is to drop the price. But the true costs go far beyond a price reduction.',
+    date: 'December 18, 2025',
+    category: 'Market Insights'
+  },
+  // CLUSTER 1: Sell House Fast Las Vegas
   {
     id: 'sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options',
     title: 'Sell House Fast Las Vegas: The Ultimate Guide to All Your Options',
