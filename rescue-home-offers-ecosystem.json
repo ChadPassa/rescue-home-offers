@@ -1,0 +1,188 @@
+{
+  "brand": {
+    "name": "Rescue Home Offers",
+    "domain": "rescuehomeoffers.com",
+    "tagline": "Home of the Second Opinion",
+    "niche": "Real estate solutions for distressed homes and distressed homeowners",
+    "description": "Rescue Home Offers provides instant offers to homeowners with 11+ different solutions - from traditional listings to fix-and-flip partnerships, cash offers, subject-to agreements, seller financing, and creative solutions. Serving motivated sellers dealing with everything from standard home sales to distressed situations (foreclosure, divorce, probate, inherited properties, tired landlords, property damage). Local focus in Las Vegas, NV with 20+ years experience since 2004."
+  },
+
+  "audience": {
+    "ideal_customer": "Distressed homeowners (facing foreclosure, divorce, probate, tired landlords, job relocation) AND distressed home owners (properties needing major repairs, outdated, structural issues, fire/water damage, hoarder situations) - plus strategic sellers who just want the best deal in Las Vegas, NV",
+    "pain_points": [
+      "Facing foreclosure or behind on mortgage payments",
+      "Going through divorce or separation and need to sell",
+      "Inherited property through probate they can't afford or don't want",
+      "Tired landlord ready to be done with rental properties",
+      "Job relocation with tight timeline to sell",
+      "Home needs major repairs they can't afford",
+      "Property has structural issues, fire/water/storm damage",
+      "Hoarder situation or estate cleanout needed",
+      "Only getting 1-2 options from other investors (lowball cash or traditional listing)",
+      "Bad credit making it hard to move forward",
+      "Need cash fast but don't want to get ripped off"
+    ],
+    "desired_outcome": "Get fair treatment, see ALL their options (not just 1-2), and find a solution that fits their unique situation - whether that's getting out from under the property stress or finding a creative solution that works for them"
+  },
+
+  "voice": {
+    "tone": "Direct, no-BS, Gen X, transparent, educational",
+    "personality": "A seasoned real estate pro who's seen it all and tells it straight - no fluff, no pressure, just solutions. Like a trusted advisor who's been in the trenches for 20+ years.",
+    "avoid": [
+      "Fluff and hype",
+      "Corporate jargon",
+      "Pressure tactics",
+      "Typical 'We Buy Houses' investor speak",
+      "Emojis",
+      "Overpromising or unrealistic claims",
+      "Condescending tone"
+    ],
+    "examples": [
+      "No home should go to the courthouse steps.",
+      "Your price, our terms. Your terms, our price.",
+      "We're Gen X. We get stuff done.",
+      "Trust us—we've seen worse.",
+      "Listen, we get it. You're here because you have a problem. We're not trying to convince you of that—you already know.",
+      "We're not here to lowball you. We're here to show you all the options."
+    ]
+  },
+
+  "products": [
+    {
+      "name": "Second Opinion Advantage",
+      "description": "The full menu of 11+ home selling solutions - from cash offers to creative financing - so homeowners can choose what works best for their unique situation.",
+      "features": [
+        "Cash Offers - Close in 7-14 days, sell as-is",
+        "Premier Offer - Top-tier cash for better properties",
+        "Subject-To - We take over mortgage payments",
+        "Keep Your Home - Stop foreclosure and stay",
+        "Fix It & List It - We renovate, you get top dollar (no out-of-pocket)",
+        "Cash+ Programs - Advance for repairs, sell for more",
+        "Traditional Listing - Full-service MLS",
+        "Sell & Leaseback - Get cash now, move later",
+        "Seller Financing - Become the bank, earn monthly income",
+        "Trade Up / Freedom Lock - Buy next home before selling",
+        "Partnership Deals - Share in the profit"
+      ],
+      "pricing": "Free consultation, no obligation"
+    }
+  ],
+
+  "positioning": {
+    "uvp": "The only home buyer that shows you ALL your options - 11+ solutions from cash offers to creative financing - so you can choose what works best for YOUR situation. We're the Home of the Second Opinion.",
+    "competitors": [
+      "We Buy Ugly Houses",
+      "Local cash buyers",
+      "Traditional real estate agents",
+      "iBuyers (Opendoor, Offerpad)",
+      "Other 'We Buy Houses' investors"
+    ],
+    "differentiators": [
+      "11+ solutions vs. competitors' 1-2 options",
+      "20+ years experience (since 2004)",
+      "Transparent pricing - 'Your price, our terms. Your terms, our price.'",
+      "Creative financing options most investors don't offer",
+      "Actually help people beyond the transaction (pre-paid rent, investment coaching)",
+      "Local Las Vegas expertise with nationwide reach",
+      "The Rescue Promise - fair, transparent, honest"
+    ]
+  },
+
+  "conversion": {
+    "primary_cta": {
+      "text": "Get My Offer",
+      "url": "https://rescuehomeoffers.com/#calculator"
+    },
+    "secondary_cta": {
+      "text": "Schedule Free Consultation",
+      "url": "https://rescuehomeoffers.com/#contact"
+    },
+    "success_metric": "Offer requested or consultation scheduled"
+  },
+
+  "urls": {
+    "website": "https://rescuehomeoffers.com",
+    "blog": "https://rescuehomeoffers.com/blog",
+    "demo": "https://rescuehomeoffers.com/#calculator",
+    "pricing": null,
+    "social": {
+      "facebook": null,
+      "instagram": null,
+      "twitter": null,
+      "linkedin": null,
+      "youtube": null,
+      "tiktok": null
+    },
+    "resources": {
+      "help": "https://rescuehomeoffers.com/faq",
+      "case_studies": "https://rescuehomeoffers.com/about",
+      "calculator": "https://rescuehomeoffers.com/#calculator",
+      "ebook": "https://rescuehomeoffers.com/The-Cash-Offer-Lie.pdf"
+    }
+  },
+
+  "social_proof": [
+    {
+      "client": "Single Mother Behind on Payments",
+      "result": "Saved her equity, pre-paid 6 months of rent when she couldn't find housing due to bad credit",
+      "quote": "Her husband's addiction led to job loss and mounting debt. She was months behind on her mortgage. We bought her home, saved her equity, and called the landlord directly."
+    },
+    {
+      "client": "Disabled Casino Worker",
+      "result": "Sold home quickly, received investment strategy coaching for passive income",
+      "quote": "Electrocuted on the job, his disability payout was dwindling. We helped him sell, then coached him on buying rental properties to create passive income."
+    },
+    {
+      "client": "Neighborhood Transformation",
+      "result": "Property values increased for all neighbors when we renovated",
+      "quote": "When we flip a property for $10K above market, every neighbor's home value goes up. When we succeed, YOU succeed."
+    }
+  ],
+
+  "seo": {
+    "primary_keywords": [
+      "sell house fast Las Vegas",
+      "cash home buyers Las Vegas",
+      "stop foreclosure Las Vegas"
+    ],
+    "secondary_keywords": [
+      "sell inherited property Las Vegas",
+      "distressed home buyers",
+      "creative real estate solutions",
+      "subject-to real estate",
+      "seller financing Las Vegas",
+      "sell house as-is Las Vegas",
+      "avoid foreclosure options"
+    ],
+    "topics_to_cover": [
+      "Foreclosure prevention and options",
+      "Cash offers vs traditional listings",
+      "Creative financing solutions",
+      "Inherited property and probate sales",
+      "Distressed property solutions",
+      "Las Vegas real estate market",
+      "Selling during divorce",
+      "Tired landlord exit strategies"
+    ],
+    "topics_to_avoid": [
+      "Competitor bashing",
+      "Unrealistic promises",
+      "Get-rich-quick schemes",
+      "Anything that sounds like typical investor hype"
+    ]
+  },
+
+  "credentials": {
+    "github_repo": "ChadPassa/rescue-home-offers",
+    "github_connected": true,
+    "database_url": null,
+    "netlify_site_id": null,
+    "domain_connected": true
+  },
+
+  "contact": {
+    "phone": "(775) 618-2423",
+    "email": "deals@rescuehomeoffers.com",
+    "location": "Las Vegas, NV"
+  }
+}
