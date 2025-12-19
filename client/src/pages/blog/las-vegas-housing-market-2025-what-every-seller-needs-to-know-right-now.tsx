@@ -2,78 +2,100 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from 'wouter';
 
-export default function BlogPost() {
+export default function LasVegasMarket2025() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
       <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="mb-4">
             <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
           </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Real Estate</span>
+          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Conditions</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now</h1>
           <p className="text-gray-500 mt-4">By England Hart • December 18, 2025</p>
         </div>
       </section>
 
-      {/* Featured Image */}
       <div className="container mx-auto px-4 max-w-4xl py-8">
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
-            src="/images/blog/las-vegas-housing-market-2025.jpg" 
-            alt="Las Vegas skyline with residential neighborhoods at sunset"
+            src="/images/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now.jpg" 
+            alt="Las Vegas Housing Market 2025 - What Sellers Need to Know"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>
       </div>
 
-      {/* Content Section */}
       <article className="py-12">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg prose-gray">
-          <p>Listen, we get it. You're here because you have a problem. The headlines are screaming that Las Vegas home prices are at an all-time high, but your house has been sitting on the market for months with no serious offers. You're not alone. The market is more complicated than the news makes it seem, and if you're a seller right now, you need to understand what's really going on.</p>
-          <h2>The Great Las Vegas Market Paradox</h2>
-          <p>Here's the deal: the median home price in Las Vegas just hit a record $488,995 in November 2025. On the surface, that sounds great for sellers. But here's the catch - sales are down 6.6% from last year, and the number of homes on the market is up a whopping 26.3%. The average home is now sitting on the market for 72 days.</p>
-          <p>What does this mean? It means we have a surplus of homes for sale and not enough buyers. Nationally, a staggering 70% of home listings are considered "stale," meaning they've been on the market for 60 days or more without going under contract. Sellers are getting discouraged and pulling their homes off the market at the highest rate in a decade. This is artificially propping up prices, creating a confusing and frustrating situation for anyone trying to sell.</p>
-          <h2>Why Your Home Isn't Selling (and What to Do About It)</h2>
-          <p>If your home is one of the thousands sitting on the market in Las Vegas, you're likely facing one of these problems:</p>
-          <ul>
-            <li>  <strong>You're getting lowball offers:</strong> With more inventory to choose from, buyers are feeling less pressure to pay top dollar.</li>
-            <li>  <strong>Your home needs repairs:</strong> In a competitive market, homes that need work get overlooked.</li>
-            <li>  <strong>You're in a distressed situation:</strong> Facing foreclosure, divorce, or probate adds another layer of stress to an already difficult process.</li>
-          </ul>
-          <p>Here's the hard truth: a traditional listing isn't the only answer, and in this market, it might not be the best one. You need options. That's where we come in.</p>
-          <h2>Your Price, Our Terms. Your Terms, Our Price.</h2>
-          <p>At Rescue Home Offers, we're not here to give you the same old song and dance. We're a team of seasoned Las Vegas real estate pros who have been navigating this market for over 20 years. We've seen it all, and we're here to give you a second opinion.</p>
-          <p>We don't just offer you a lowball cash offer or a traditional listing. We have over 11 different solutions for homeowners, including:</p>
-          <ul>
-            <li>  <strong>Fix-and-flip partnerships:</strong> If your home needs work, we can partner with you to fix it up and sell it for top dollar.</li>
-            <li>  <strong>Cash offers:</strong> If you need to sell fast, we can give you a fair cash offer and close on your timeline.</li>
-            <li>  <strong>Creative financing solutions:</strong> We can work with you on subject-to agreements, seller financing, and other creative solutions that most real estate agents and investors don't even know exist.</li>
-          </ul>
-          <p>No home should go to the courthouse steps. You have options. Don't let a stale listing and a confusing market dictate your future. If you're ready to see all your options and get a fair assessment of your situation, give us a call. We're here to help you find the right solution, not just the one that makes us the most money.</p>
+          <p>The Las Vegas housing market in 2025 is not the market it was two years ago. If you're trying to sell your home, you need to understand what's happening right now—not what happened in 2021 or 2022. The rules have changed, and sellers who don't adapt are finding their homes sitting on the market for months.</p>
 
-          {/* Related Articles */}
+          <p>At Rescue Home Offers, we've been in this market for over 20 years. We've seen the booms, the busts, and everything in between. Here's what you need to know about selling in Las Vegas right now.</p>
+
+          <h2>The Numbers Don't Lie</h2>
+
+          <p>According to recent data, <Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline">nearly 70% of homes</Link> listed in many markets are sitting unsold. Delistings have jumped 64% from a year ago. Sellers are pulling their homes off the market at the highest rate in years because they can't find buyers.</p>
+
+          <p>Why? Interest rates are still elevated. Buyers are more cautious. And there's more inventory than there has been in years. This isn't a crash—it's a correction. And it means sellers need to be smarter about how they approach the market.</p>
+
+          <h2>The Stale Listing Problem</h2>
+
+          <p>One of the biggest issues we're seeing is the <Link to="/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options" className="text-[#c9a961] hover:underline">stale listing</Link> problem. A home that sits on the market for too long becomes stigmatized. Buyers start to wonder what's wrong with it. Agents stop showing it. And the <Link to="/blog/hidden-costs-stale-listing" className="text-[#c9a961] hover:underline">hidden costs</Link> of carrying the property—mortgage payments, taxes, insurance, maintenance—keep piling up.</p>
+
+          <p>If your home has been on the market for more than 30 days without serious interest, you have a problem. And the solution isn't always to just lower the price.</p>
+
+          <h2>Is Your Home Overpriced?</h2>
+
+          <p>This is the question no one wants to ask, but it's often the answer. Many sellers are still pricing their homes based on what their neighbor sold for in 2022. But that market is gone. If you're not getting showings, if you're not getting offers, your home is probably <Link to="/blog/is-your-home-overpriced-how-to-know-when-to-adjust" className="text-[#c9a961] hover:underline">overpriced</Link>.</p>
+
+          <p>But here's the thing: lowering your price isn't your only option. There are <Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">creative real estate solutions</Link> that can help you get more money than a price reduction would allow.</p>
+
+          <h2>Your Options in This Market</h2>
+
+          <p>If you need to <Link to="/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options" className="text-[#c9a961] hover:underline">sell your house fast</Link> in this market, you have several options:</p>
+
+          <ul>
+            <li><strong>Price Aggressively:</strong> If you're committed to a traditional sale, you need to price below the competition to stand out.</li>
+            <li><strong>Cash Sale:</strong> A <Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">cash buyer</Link> can close quickly and take the property as-is, avoiding the uncertainty of the traditional market.</li>
+            <li><strong>Creative Financing:</strong> Subject-to deals, seller financing, and other creative strategies can attract buyers who can't get traditional financing.</li>
+            <li><strong>Wait It Out:</strong> If you can afford to wait, the market may improve. But be prepared for the carrying costs.</li>
+          </ul>
+
+          <h2>Special Situations</h2>
+
+          <p>If you're dealing with a special situation, the market conditions make it even more critical to act strategically:</p>
+
+          <ul>
+            <li><strong>Foreclosure:</strong> If you're <Link to="/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide" className="text-[#c9a961] hover:underline">facing foreclosure</Link>, you don't have time to wait for the market to improve. You need a fast solution.</li>
+            <li><strong>Inherited Property:</strong> An <Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">inherited property</Link> that sits vacant is costing you money every month. The longer you wait, the more you lose.</li>
+            <li><strong>Distressed Property:</strong> If your home needs major repairs, the traditional market may not be an option at all.</li>
+          </ul>
+
+          <h2>The Second Opinion Advantage</h2>
+
+          <p>At Rescue Home Offers, we're the home of the "Second Opinion." We don't just make you a cash offer and call it a day. We show you all your options—traditional sale, cash offer, creative solutions—and help you choose the one that's right for your situation.</p>
+
+          <p>Don't let this market catch you off guard. Get your free, no-obligation Second Opinion today.</p>
+
           <div className="mt-12 p-6 bg-gray-50 rounded-2xl not-prose">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>
             <ul className="space-y-3">
-              <li><Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline">Why 70% of Homes Are Sitting Unsold: The Stale Listing Crisis</Link></li>
-              <li><Link to="/blog/is-your-home-overpriced-how-to-know-when-to-adjust" className="text-[#c9a961] hover:underline">Is Your Home Overpriced? How to Know When to Adjust</Link></li>
-              <li><Link to="/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options" className="text-[#c9a961] hover:underline">When Your Listing Goes Stale: Why Your Home Isn't Selling (and Your Other Options)</Link></li>
-              <li><Link to="/blog/hidden-costs-stale-listing" className="text-[#c9a961] hover:underline">The Hidden Costs of a Stale Listing (What Your Agent Won't Tell You)</Link></li>
               <li><Link to="/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options" className="text-[#c9a961] hover:underline">Sell House Fast Las Vegas: The Ultimate Guide</Link></li>
               <li><Link to="/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide" className="text-[#c9a961] hover:underline">How to Stop Foreclosure in Las Vegas</Link></li>
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Cash Home Buyers in Las Vegas: Are They Legit?</Link></li>
               <li><Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">Selling an Inherited Property in Las Vegas</Link></li>
-              <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Creative Real Estate Solutions: Beyond the Cash Offer</Link></li>
+              <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Creative Real Estate Solutions</Link></li>
+              <li><Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline">Why 70% of Homes Are Sitting Unsold</Link></li>
+              <li><Link to="/blog/hidden-costs-stale-listing" className="text-[#c9a961] hover:underline">The Hidden Costs of a Stale Listing</Link></li>
+              <li><Link to="/blog/is-your-home-overpriced-how-to-know-when-to-adjust" className="text-[#c9a961] hover:underline">Is Your Home Overpriced?</Link></li>
+              <li><Link to="/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options" className="text-[#c9a961] hover:underline">When Your Listing Goes Stale</Link></li>
             </ul>
           </div>
         </div>
       </article>
 
-      {/* CTA Section */}
       <section className="bg-gray-50 py-12 border-t">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready for Your Second Opinion?</h2>

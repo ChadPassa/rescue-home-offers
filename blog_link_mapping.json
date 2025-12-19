@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "slug": "sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options",
+      "title": "Sell House Fast Las Vegas: The Ultimate Guide to All Your Options",
+      "url": "/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options",
+      "category": "Selling Your Home",
+      "type": "pillar",
+      "cluster": 1,
+      "keywords": ["sell house fast", "sell your house", "selling your home", "sell quickly", "quick sale", "fast sale", "all your options", "11+ solutions", "multiple options"]
+    },
+    {
+      "slug": "how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide",
+      "title": "How to Stop Foreclosure in Las Vegas: A Step-by-Step Guide",
+      "url": "/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide",
+      "category": "Foreclosure",
+      "type": "satellite",
+      "cluster": 1,
+      "keywords": ["foreclosure", "stop foreclosure", "facing foreclosure", "behind on payments", "mortgage default", "pre-foreclosure", "avoid foreclosure", "foreclosure process"]
+    },
+    {
+      "slug": "cash-home-buyers-in-las-vegas-are-they-legit",
+      "title": "Cash Home Buyers in Las Vegas: Are They Legit?",
+      "url": "/blog/cash-home-buyers-in-las-vegas-are-they-legit",
+      "category": "Cash Offers",
+      "type": "satellite",
+      "cluster": 1,
+      "keywords": ["cash buyers", "cash home buyers", "cash offer", "we buy houses", "cash for houses", "legitimate cash buyers", "cash sale"]
+    },
+    {
+      "slug": "selling-an-inherited-property-in-las-vegas-the-complete-guide",
+      "title": "Selling an Inherited Property in Las Vegas: The Complete Guide",
+      "url": "/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide",
+      "category": "Inherited Property",
+      "type": "satellite",
+      "cluster": 1,
+      "keywords": ["inherited property", "inherited home", "probate", "estate sale", "inherited house", "death in family", "estate property"]
+    },
+    {
+      "slug": "creative-real-estate-solutions-beyond-the-cash-offer",
+      "title": "Creative Real Estate Solutions: Beyond the Cash Offer",
+      "url": "/blog/creative-real-estate-solutions-beyond-the-cash-offer",
+      "category": "Creative Solutions",
+      "type": "satellite",
+      "cluster": 1,
+      "keywords": ["creative solutions", "creative financing", "seller financing", "subject-to", "lease option", "fix and flip", "partnership", "alternative solutions"]
+    },
+    {
+      "slug": "las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now",
+      "title": "Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now",
+      "url": "/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now",
+      "category": "Market Conditions",
+      "type": "pillar",
+      "cluster": 2,
+      "keywords": ["housing market", "market conditions", "2025 market", "real estate market", "Las Vegas market", "market trends", "seller's market", "buyer's market"]
+    },
+    {
+      "slug": "why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis",
+      "title": "Why 70% of Homes Are Sitting Unsold: The Stale Listing Crisis",
+      "url": "/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis",
+      "category": "Stale Listings",
+      "type": "satellite",
+      "cluster": 2,
+      "keywords": ["stale listing", "unsold homes", "sitting on market", "not selling", "days on market", "70%", "listing crisis"]
+    },
+    {
+      "slug": "is-your-home-overpriced-how-to-know-when-to-adjust",
+      "title": "Is Your Home Overpriced? How to Know When to Adjust",
+      "url": "/blog/is-your-home-overpriced-how-to-know-when-to-adjust",
+      "category": "Pricing Strategy",
+      "type": "satellite",
+      "cluster": 2,
+      "keywords": ["overpriced", "price reduction", "pricing strategy", "home value", "asking price", "market value", "price adjustment"]
+    },
+    {
+      "slug": "when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options",
+      "title": "When Your Listing Goes Stale: Why Your Home Isn't Selling and Your Other Options",
+      "url": "/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options",
+      "category": "Selling Options",
+      "type": "satellite",
+      "cluster": 2,
+      "keywords": ["listing goes stale", "home not selling", "expired listing", "relisting", "take off market", "other options", "alternative to listing"]
+    },
+    {
+      "slug": "hidden-costs-stale-listing",
+      "title": "The Hidden Costs of a Stale Listing (What Your Agent Won't Tell You)",
+      "url": "/blog/hidden-costs-stale-listing",
+      "category": "Market Insights",
+      "type": "satellite",
+      "cluster": 2,
+      "keywords": ["hidden costs", "carrying costs", "mortgage payments", "holding costs", "opportunity cost", "price stigma", "agent won't tell you"]
+    }
+  ]
+}
