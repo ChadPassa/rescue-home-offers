@@ -52,8 +52,8 @@ export default function BlogPost() {
           <p>We’ll sit down with you, review your situation, and show you ALL your options. No pressure. No BS. Just a clear path forward.</p>
           <p>Don’t let your home become another stale listing statistic. If you’re ready for a second opinion, we’re ready to help.</p>
           <h3>References</h3>
-          <p>[1] Redfin. (2025, November 25). *Delistings Jump 28%*. <a href=\"https://www.redfin.com/news/delistings-jump-sellers-pull-homes-off-market/\" className=\"text-[#c9a961] hover:underline\">https://www.redfin.com/news/delistings-jump-sellers-pull-homes-off-market/</a></p>
-          <p>[2] Las Vegas Review-Journal. (2025, December). *Home prices hit record high in Southern Nevada again*. <a href=\"https://www.reviewjournal.com/business/housing/home-prices-hit-record-high-in-southern-nevada-again-3592899/\" className=\"text-[#c9a961] hover:underline\">https://www.reviewjournal.com/business/housing/home-prices-hit-record-high-in-southern-nevada-again-3592899/</a></p>
+          <p>[1] Redfin. (2025, November 25). <em>Delistings Jump 28%</em>. <a href="https://www.redfin.com/news/delistings-jump-sellers-pull-homes-off-market/" className="text-[#c9a961] hover:underline" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <p>[2] Las Vegas Review-Journal. (2025, December). <em>Home prices hit record high in Southern Nevada again</em>. <a href="https://www.reviewjournal.com/business/housing/home-prices-hit-record-high-in-southern-nevada-again-3592899/" className="text-[#c9a961] hover:underline" target="_blank" rel="noopener noreferrer">Source</a></p>
 
           {/* Related Articles */}
           <div className="mt-12 p-6 bg-gray-50 rounded-2xl not-prose">

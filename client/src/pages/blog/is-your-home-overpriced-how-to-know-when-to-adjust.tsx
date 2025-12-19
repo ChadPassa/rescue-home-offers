@@ -24,7 +24,7 @@ export default function BlogPost() {
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg prose-gray">
           <h2>Your Price is a Fantasy. The Market's Reality is a Slap in the Face.</h2>
           <p>Listen, we get it. You looked at your neighbor's Zestimate, you saw the headlines about record-high prices in Las Vegas, and you set your asking price. Now, your home has been sitting on the market for 60, 90, maybe even 100 days. The showings have dried up. The only feedback is a deafening silence.</p>
-          <p>You're not alone. In the current market, a staggering <strong>70% of U.S. home listings are considered \"stale,\"</strong> meaning they've been on the market for over 60 days without a single offer [1]. In Las Vegas, the average time on market has ballooned to 72 days, and while prices are at an all-time high, sales are actually down 6.6% from last year [2].</p>
+          <p>You're not alone. In the current market, a staggering <strong>70% of U.S. home listings are considered "stale,"</strong> meaning they've been on the market for over 60 days without a single offer [1]. In Las Vegas, the average time on market has ballooned to 72 days, and while prices are at an all-time high, sales are actually down 6.6% from last year [2].</p>
           <p>So, what gives? It's simple: your price is a fantasy, and the market's reality is a slap in the face. Here's how to know when it's time to adjust.</p>
           <h3>The Market Doesn't Care About Your Feelings (or Your Zestimate)</h3>
           <p>That number you have in your head—what you *need* to get, what you *want* to get, what Zillow *told* you you could get—is irrelevant. The only number that matters is what a ready, willing, and able buyer is willing to pay for your home *today*.</p>
@@ -33,10 +33,10 @@ export default function BlogPost() {
             <li>  <strong>No Showings:</strong> This is the most obvious sign. If you're not getting people in the door, your price is too high. Period.</li>
             <li>  <strong>Negative Feedback:</strong> If the only feedback you're getting from the few showings you've had is about the price, it's time to listen.</li>
             <li>  <strong>Your Neighbors are Selling, You're Not:</strong> If other homes in your neighborhood are going under contract while yours sits, you're the problem, not the market.</li>
-            <li>  <strong>You're Chasing the Market Down:</strong> Did you know that 1 in 5 homes that are delisted are re-listed at a lower price to reset the \"days on market\" clock? [1] Don't be that person. Price it right from the start.</li>
+            <li>  <strong>You're Chasing the Market Down:</strong> Did you know that 1 in 5 homes that are delisted are re-listed at a lower price to reset the "days on market" clock? [1] Don't be that person. Price it right from the start.</li>
           </ul>
-          <h3>The \"Wait and See\" Approach is a Losing Strategy</h3>
-          <p>With inventory up 26.3% in Las Vegas, buyers have more options than ever [2]. They're not going to overpay for your home when they can get a similar one for less. The longer your home sits, the more it becomes stigmatized. Buyers start to wonder, \"What's wrong with it?\"</p>
+          <h3>The "Wait and See" Approach is a Losing Strategy</h3>
+          <p>With inventory up 26.3% in Las Vegas, buyers have more options than ever [2]. They're not going to overpay for your home when they can get a similar one for less. The longer your home sits, the more it becomes stigmatized. Buyers start to wonder, "What's wrong with it?"</p>
           <p>The reality is, you're not just competing with other sellers. You're competing with time. And time is not on your side.</p>
           <h3>It's Not About Lowballing. It's About Options.</h3>
           <p>At Rescue Home Offers, we're not here to lowball you. We're here to give you a second opinion. We're Gen X. We get stuff done. We've been in the Las Vegas real estate trenches for over 20 years, and we've seen it all.</p>
