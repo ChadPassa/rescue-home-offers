@@ -1,3 +1,9 @@
+import SellHouseFastLasVegasTheUltimateGuideToAllYourOptions from './pages/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options';
+import HowToStopForeclosureInLasVegasAStepByStepGuide from './pages/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide';
+import CashHomeBuyersInLasVegasAreTheyLegit from './pages/blog/cash-home-buyers-in-las-vegas-are-they-legit';
+import SellingAnInheritedPropertyInLasVegasTheCompleteGuide from './pages/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide';
+import CreativeRealEstateSolutionsBeyondTheCashOffer from './pages/blog/creative-real-estate-solutions-beyond-the-cash-offer';
+import SubjectToRealEstateTheSecretToSellingYourHomeWithAMortgage from './pages/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
