@@ -15,9 +15,20 @@ export default function HowToStopForeclosureInLasVegasAStepByStepGuide() {
           </div>
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Foreclosure</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">How to Stop Foreclosure in Las Vegas: A Step-by-Step Guide</h1>
-          <p className="text-gray-500 mt-4">December 18, 2025</p>
+          <p className="text-gray-500 mt-4">By England Hart • December 18, 2025</p>
         </div>
       </section>
+
+      {/* Featured Image */}
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <div className="rounded-xl overflow-hidden shadow-lg">
+          <img 
+            src="/images/blog/stop-foreclosure-las-vegas.jpg" 
+            alt="Homeowner holding keys with hope - Stop Foreclosure Las Vegas"
+            className="w-full h-64 md:h-96 object-cover"
+          />
+        </div>
+      </div>
 
       {/* Content Section */}
       <article className="py-12">

@@ -27,6 +27,7 @@ export default function Header() {
           <a href="/#solutions" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">SOLUTIONS</a>
           <a href="/#how-it-works" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">HOW IT WORKS</a>
           <a href="/#stories" className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors cursor-pointer">SUCCESS STORIES</a>
+          <Link href="/blog"><a className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors">BLOG</a></Link>
           <Link href="/faq"><a className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors">Q&A</a></Link>
           <Link href="/about"><a className="text-sm font-bold text-gray-700 hover:text-[#c9a961] transition-colors">ABOUT</a></Link>
           <Button onClick={scrollToCalculator} size="lg" className="bg-[#c9a961] hover:bg-[#b8954f] text-white font-black text-base px-8 rounded-full shadow-md">
@@ -69,6 +70,14 @@ export default function Header() {
             >
               SUCCESS STORIES
             </a>
+            <Link href="/blog">
+              <a 
+                className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                BLOG
+              </a>
+            </Link>
             <Link href="/faq">
               <a 
                 className="text-base font-bold text-gray-700 hover:text-[#c9a961] transition-colors py-2"
