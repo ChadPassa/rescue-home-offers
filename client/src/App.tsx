@@ -19,7 +19,6 @@ import HowToStopForeclosure from './pages/blog/how-to-stop-foreclosure-in-las-ve
 import CashHomeBuyers from './pages/blog/cash-home-buyers-in-las-vegas-are-they-legit';
 import SellingInheritedProperty from './pages/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide';
 import CreativeRealEstateSolutions from './pages/blog/creative-real-estate-solutions-beyond-the-cash-offer';
-import SubjectToRealEstate from './pages/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage';
 
 function Router() {
   return (
@@ -39,7 +38,6 @@ function Router() {
       <Route path={"/blog/cash-home-buyers-in-las-vegas-are-they-legit"} component={CashHomeBuyers} />
       <Route path={"/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide"} component={SellingInheritedProperty} />
       <Route path={"/blog/creative-real-estate-solutions-beyond-the-cash-offer"} component={CreativeRealEstateSolutions} />
-      <Route path={"/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage"} component={SubjectToRealEstate} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

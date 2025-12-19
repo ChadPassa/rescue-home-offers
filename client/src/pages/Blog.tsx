@@ -40,13 +40,6 @@ const blogPosts = [
     date: 'December 18, 2025',
     category: 'Creative Solutions'
   },
-  {
-    id: 'subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage',
-    title: 'Subject-To Real Estate: The Secret to Selling Your Home with a Mortgage',
-    excerpt: 'Behind on your mortgage? A subject-to agreement could save your credit and get you cash to walk away.',
-    date: 'December 18, 2025',
-    category: 'Creative Solutions'
-  },
   // EXISTING POSTS
   {
     id: 'calculate-fair-cash-offer',
@@ -132,7 +125,7 @@ export default function Blog() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/#calculator" className="bg-[#c9a961] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8860b] transition-colors inline-block">
-              Get Instant Offer
+              Get Your Offer Now
             </a>
             <a href="/#contact" className="bg-white text-gray-900 border-2 border-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-[#c9a961] transition-colors">
               Schedule Consultation

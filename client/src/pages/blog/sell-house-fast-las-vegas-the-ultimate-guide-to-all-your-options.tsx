@@ -81,7 +81,6 @@ export default function SellHouseFastLasVegas() {
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Cash Home Buyers in Las Vegas: Are They Legit?</Link></li>
               <li><Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">Selling an Inherited Property in Las Vegas: The Complete Guide</Link></li>
               <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Creative Real Estate Solutions: Beyond the Cash Offer</Link></li>
-              <li><Link to="/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage" className="text-[#c9a961] hover:underline">Subject-To Real Estate: The Secret to Selling Your Home with a Mortgage</Link></li>
             </ul>
           </div>
         </div>
@@ -95,10 +94,10 @@ export default function SellHouseFastLasVegas() {
             Get a free, no-obligation cash offer or schedule a consultation to explore all your options.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#calculator" className="bg-[#c9a961] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8860b] transition-colors inline-block">
-              Get Instant Offer
+            <a href="/#calculator" className="bg-[#c9a961] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#b8860b] transition-colors inline-block text-lg">
+              Get Your Offer Now →
             </a>
-            <a href="/#contact" className="bg-white text-gray-900 border-2 border-gray-300 px-6 py-3 rounded-lg font-semibold hover:border-[#c9a961] transition-colors">
+            <a href="/#contact" className="bg-white text-gray-900 border-2 border-gray-300 px-6 py-4 rounded-lg font-semibold hover:border-[#c9a961] transition-colors">
               Schedule Consultation
             </a>
           </div>

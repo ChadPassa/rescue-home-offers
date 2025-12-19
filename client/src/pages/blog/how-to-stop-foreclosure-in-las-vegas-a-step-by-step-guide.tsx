@@ -167,7 +167,6 @@ export default function HowToStopForeclosureInLasVegasAStepByStepGuide() {
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Cash Home Buyers in Las Vegas: Are They Legit? The No-BS Guide for Homeowners</Link></li>
               <li><Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">Selling an Inherited Property in Las Vegas: The Complete Guide</Link></li>
               <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Beyond the Cash Offer: Unlocking Creative Real Estate Solutions in Las Vegas</Link></li>
-              <li><Link to="/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage" className="text-[#c9a961] hover:underline">Subject-To Real Estate: The Secret to Selling Your Home with a Mortgage</Link></li>
             </ul>
           </div>
         </div>
