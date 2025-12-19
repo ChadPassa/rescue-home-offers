@@ -32,14 +32,16 @@ cur.execute("""
     );
 """)
 
+print("Database schema created successfully.")
+
+# Read and execute the SQL script to insert the blog posts
+with open("insert_blog_posts.sql", "r") as f:
+    sql_script = f.read()
+    cur.execute(sql_script)
+
+print("Blog posts inserted successfully.")
+
 # Commit the changes and close the connection
 conn.commit()
 cur.close()
 conn.close()
-
-print("Database schema created successfully.")
-
-import subprocess
-
-# Run the SQL script to insert the blog posts
-subprocess.run(["psql", os.environ["DATABASE_URL"], "-f", "/home/ubuntu/rescue-home-offers/insert_blog_posts.sql"])
