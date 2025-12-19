@@ -3,6 +3,51 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const blogPosts = [
+  // NEW CLUSTER: Sell House Fast Las Vegas
+  {
+    id: 'sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options',
+    title: 'Sell House Fast Las Vegas: The Ultimate Guide to All Your Options',
+    excerpt: 'You have more options than you think. You\'re not stuck with a lowball cash offer or a traditional listing that could take months. We show you all 11+ options.',
+    date: 'December 18, 2025',
+    category: 'Selling Your Home',
+    isPillar: true
+  },
+  {
+    id: 'how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide',
+    title: 'How to Stop Foreclosure in Las Vegas: A Step-by-Step Guide',
+    excerpt: 'Facing foreclosure? You have options. Learn the step-by-step process to stop foreclosure and save your credit.',
+    date: 'December 18, 2025',
+    category: 'Foreclosure'
+  },
+  {
+    id: 'cash-home-buyers-in-las-vegas-are-they-legit',
+    title: 'Cash Home Buyers in Las Vegas: Are They Legit?',
+    excerpt: 'The "We Buy Houses" industry is full of predators. Learn how to spot the legit buyers from the scammers.',
+    date: 'December 18, 2025',
+    category: 'Cash Offers'
+  },
+  {
+    id: 'selling-an-inherited-property-in-las-vegas-the-complete-guide',
+    title: 'Selling an Inherited Property in Las Vegas: The Complete Guide',
+    excerpt: 'Inherited a property you don\'t want? Learn how to sell it quickly without the hassle of probate.',
+    date: 'December 18, 2025',
+    category: 'Inherited Property'
+  },
+  {
+    id: 'creative-real-estate-solutions-beyond-the-cash-offer',
+    title: 'Creative Real Estate Solutions: Beyond the Cash Offer',
+    excerpt: 'Cash offers aren\'t your only option. Discover creative solutions like subject-to, seller financing, and fix-and-flip partnerships.',
+    date: 'December 18, 2025',
+    category: 'Creative Solutions'
+  },
+  {
+    id: 'subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage',
+    title: 'Subject-To Real Estate: The Secret to Selling Your Home with a Mortgage',
+    excerpt: 'Behind on your mortgage? A subject-to agreement could save your credit and get you cash to walk away.',
+    date: 'December 18, 2025',
+    category: 'Creative Solutions'
+  },
+  // EXISTING POSTS
   {
     id: 'calculate-fair-cash-offer',
     title: 'How to Calculate a Fair Cash Offer - A Complete Breakdown',
@@ -63,9 +108,12 @@ export default function Blog() {
               <Link
                 key={post.id}
                 to={`/blog/${post.id}`}
-                className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                className={`bg-white border rounded-2xl p-6 hover:shadow-lg transition-shadow ${post.isPillar ? 'border-[#c9a961] border-2' : 'border-gray-200'}`}
               >
-                <div className="text-xs font-semibold text-[#c9a961] mb-2">{post.category}</div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs font-semibold text-[#c9a961]">{post.category}</span>
+                  {post.isPillar && <span className="text-xs bg-[#c9a961] text-white px-2 py-0.5 rounded-full">Featured</span>}
+                </div>
                 <h2 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h2>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
                 <div className="text-sm text-gray-500">{post.date}</div>
@@ -97,4 +145,3 @@ export default function Blog() {
     </div>
   );
 }
-

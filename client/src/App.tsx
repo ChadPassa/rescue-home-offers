@@ -1,9 +1,3 @@
-import SellHouseFastLasVegasTheUltimateGuideToAllYourOptions from './pages/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options';
-import HowToStopForeclosureInLasVegasAStepByStepGuide from './pages/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide';
-import CashHomeBuyersInLasVegasAreTheyLegit from './pages/blog/cash-home-buyers-in-las-vegas-are-they-legit';
-import SellingAnInheritedPropertyInLasVegasTheCompleteGuide from './pages/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide';
-import CreativeRealEstateSolutionsBeyondTheCashOffer from './pages/blog/creative-real-estate-solutions-beyond-the-cash-offer';
-import SubjectToRealEstateTheSecretToSellingYourHomeWithAMortgage from './pages/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -19,6 +13,14 @@ import SingleMotherStory from "./pages/stories/SingleMotherStory";
 import CasinoWorkerStory from "./pages/stories/CasinoWorkerStory";
 import NeighborhoodStory from "./pages/stories/NeighborhoodStory";
 
+// New blog cluster imports
+import SellHouseFastLasVegas from './pages/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options';
+import HowToStopForeclosure from './pages/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide';
+import CashHomeBuyers from './pages/blog/cash-home-buyers-in-las-vegas-are-they-legit';
+import SellingInheritedProperty from './pages/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide';
+import CreativeRealEstateSolutions from './pages/blog/creative-real-estate-solutions-beyond-the-cash-offer';
+import SubjectToRealEstate from './pages/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage';
+
 function Router() {
   return (
     <Switch>
@@ -30,6 +32,15 @@ function Router() {
       <Route path={"/stories/single-mother"} component={SingleMotherStory} />
       <Route path={"/stories/casino-worker"} component={CasinoWorkerStory} />
       <Route path={"/stories/neighborhood-transformation"} component={NeighborhoodStory} />
+      
+      {/* New blog cluster routes */}
+      <Route path={"/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options"} component={SellHouseFastLasVegas} />
+      <Route path={"/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide"} component={HowToStopForeclosure} />
+      <Route path={"/blog/cash-home-buyers-in-las-vegas-are-they-legit"} component={CashHomeBuyers} />
+      <Route path={"/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide"} component={SellingInheritedProperty} />
+      <Route path={"/blog/creative-real-estate-solutions-beyond-the-cash-offer"} component={CreativeRealEstateSolutions} />
+      <Route path={"/blog/subject-to-real-estate-the-secret-to-selling-your-home-with-a-mortgage"} component={SubjectToRealEstate} />
+      
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
