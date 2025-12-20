@@ -1,0 +1,13 @@
+[build]
+  publish = "client/dist"
+  command = "pnpm run build"
+
+[[edge_functions]]
+  path = "/blog/*"
+  function = "og-tags"
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
