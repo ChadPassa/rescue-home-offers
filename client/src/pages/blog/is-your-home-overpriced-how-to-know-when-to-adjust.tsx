@@ -37,7 +37,7 @@ export default function BlogPost() {
 
       {/* Content Section */}
       <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl prose prose-lg prose-gray">
+        <div className="container mx-auto px-4 max-w-3xl"><div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
           <h2>Your Price is a Fantasy. The Market's Reality is a Slap in the Face.</h2>
           <p>Listen, we get it. You looked at your neighbor's Zestimate, you saw the headlines about record-high prices in the <Link to="/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" className="text-[#c9a961] hover:underline">Las Vegas market</Link>, and you set your asking price. Now, your home has been sitting on the market for 60, 90, maybe even 100 days. The showings have dried up. The only feedback is a deafening silence.</p>
           <p>You're not alone. In the current market, a staggering <Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline"><strong>70% of U.S. home listings are considered "stale"</strong></Link>, meaning they've been on the market for over 60 days without a single offer [1]. In Las Vegas, the average time on market has ballooned to 72 days, and while prices are at an all-time high, sales are actually down 6.6% from last year [2].</p>
@@ -66,7 +66,7 @@ export default function BlogPost() {
           <p>[2] Las Vegas Review-Journal. (2025, December). *Home prices hit record high in Southern Nevada again*. https://www.reviewjournal.com/business/housing/home-prices-hit-record-high-in-southern-nevada-again-3592899/</p>
 
           {/* Related Articles */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-2xl not-prose">
+          </div><div className="mt-12 p-6 bg-gray-50 rounded-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>
             <ul className="space-y-3">
               <li><Link to="/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" className="text-[#c9a961] hover:underline">Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now</Link></li>

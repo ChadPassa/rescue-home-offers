@@ -34,7 +34,7 @@ export default function LasVegasMarket2025() {
       </div>
 
       <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl prose prose-lg prose-gray">
+        <div className="container mx-auto px-4 max-w-3xl"><div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
           <p>The Las Vegas housing market in 2025 is not the market it was two years ago. If you're trying to sell your home, you need to understand what's happening right now—not what happened in 2021 or 2022. The rules have changed, and sellers who don't adapt are finding their homes sitting on the market for months.</p>
 
           <p>At Rescue Home Offers, we've been in this market for over 20 years. We've seen the booms, the busts, and everything in between. Here's what you need to know about selling in Las Vegas right now.</p>
@@ -62,10 +62,10 @@ export default function LasVegasMarket2025() {
           <p>If you need to <Link to="/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options" className="text-[#c9a961] hover:underline">sell your house fast</Link> in this market, you have several options:</p>
 
           <ul>
-            <li><strong>Price Aggressively:</strong> If you're committed to a traditional sale, you need to price below the competition to stand out.</li>
-            <li><strong>Cash Sale:</strong> A <Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">cash buyer</Link> can close quickly and take the property as-is, avoiding the uncertainty of the traditional market.</li>
-            <li><strong>Creative Financing:</strong> Subject-to deals, seller financing, and other creative strategies can attract buyers who can't get traditional financing.</li>
-            <li><strong>Wait It Out:</strong> If you can afford to wait, the market may improve. But be prepared for the carrying costs.</li>
+            <li>Price Aggressively: If you're committed to a traditional sale, you need to price below the competition to stand out.</li>
+            <li>Cash Sale: A <Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">cash buyer</Link> can close quickly and take the property as-is, avoiding the uncertainty of the traditional market.</li>
+            <li>Creative Financing: Subject-to deals, seller financing, and other creative strategies can attract buyers who can't get traditional financing.</li>
+            <li>Wait It Out: If you can afford to wait, the market may improve. But be prepared for the carrying costs.</li>
           </ul>
 
           <h2>Special Situations</h2>
@@ -73,9 +73,9 @@ export default function LasVegasMarket2025() {
           <p>If you're dealing with a special situation, the market conditions make it even more critical to act strategically:</p>
 
           <ul>
-            <li><strong>Foreclosure:</strong> If you're <Link to="/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide" className="text-[#c9a961] hover:underline">facing foreclosure</Link>, you don't have time to wait for the market to improve. You need a fast solution.</li>
-            <li><strong>Inherited Property:</strong> An <Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">inherited property</Link> that sits vacant is costing you money every month. The longer you wait, the more you lose.</li>
-            <li><strong>Distressed Property:</strong> If your home needs major repairs, the traditional market may not be an option at all.</li>
+            <li>Foreclosure: If you're <Link to="/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide" className="text-[#c9a961] hover:underline">facing foreclosure</Link>, you don't have time to wait for the market to improve. You need a fast solution.</li>
+            <li>Inherited Property: An <Link to="/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide" className="text-[#c9a961] hover:underline">inherited property</Link> that sits vacant is costing you money every month. The longer you wait, the more you lose.</li>
+            <li>Distressed Property: If your home needs major repairs, the traditional market may not be an option at all.</li>
           </ul>
 
           <h2>The Second Opinion Advantage</h2>
@@ -84,7 +84,7 @@ export default function LasVegasMarket2025() {
 
           <p>Don't let this market catch you off guard. Get your free, no-obligation Second Opinion today.</p>
 
-          <div className="mt-12 p-6 bg-gray-50 rounded-2xl not-prose">
+          </div><div className="mt-12 p-6 bg-gray-50 rounded-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>
             <ul className="space-y-3">
               <li><Link to="/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options" className="text-[#c9a961] hover:underline">Sell House Fast Las Vegas: The Ultimate Guide</Link></li>

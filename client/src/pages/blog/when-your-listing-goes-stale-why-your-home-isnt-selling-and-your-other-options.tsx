@@ -37,7 +37,7 @@ export default function BlogPost() {
 
       {/* Content Section */}
       <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl prose prose-lg prose-gray">
+        <div className="container mx-auto px-4 max-w-3xl"><div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
           <p>So, you put your home on the market. You saw the headlines about record-high prices in Las Vegas and thought, 'This will be easy.'" Now, it's been 30, 60, maybe even 90+ days, and all you've heard are crickets. The sign in the yard is starting to feel like a permanent fixture.</p>
           <p>Listen, we get it. You're here because the traditional listing route isn't working. You're frustrated, maybe a little panicked, and you're wondering what went wrong in a so-called "seller's market." Let's cut through the noise.</p>
           <h2>The Las Vegas Market Paradox: High Prices, Stale Listings</h2>
@@ -66,7 +66,7 @@ export default function BlogPost() {
           <p>[2] Las Vegas Review-Journal. (2025, December). <em>Home prices hit record high in Southern Nevada again</em>. <a href="https://www.reviewjournal.com/business/housing/home-prices-hit-record-high-in-southern-nevada-again-3592899/" className="text-[#c9a961] hover:underline" target="_blank" rel="noopener noreferrer">Source</a></p>
 
           {/* Related Articles */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-2xl not-prose">
+          </div><div className="mt-12 p-6 bg-gray-50 rounded-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>
             <ul className="space-y-3">
               <li><Link to="/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" className="text-[#c9a961] hover:underline">Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now</Link></li>

@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { useEffect } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -116,6 +117,10 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
