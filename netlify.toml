@@ -2,13 +2,15 @@
   publish = "client/dist"
   command = "pnpm run build"
 
-# Edge function for social media OG tags - MUST run before redirects
-[[edge_functions]]
-  path = "/blog/*"
-  function = "og-tags"
+# Serve static blog OG files for social media crawlers
+# These take precedence over the SPA fallback
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat/index.html"
+  status = 200
+  force = false
 
-# SPA fallback for client-side routing
-# Edge functions run BEFORE redirects, so this is fine
+# SPA fallback for client-side routing (only if no static file exists)
 [[redirects]]
   from = "/*"
   to = "/index.html"
