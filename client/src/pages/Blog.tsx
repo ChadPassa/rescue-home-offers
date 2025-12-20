@@ -4,7 +4,79 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const blogPosts = [
-  // CLUSTER 2: Market Conditions & Stale Listings (NEW)
+  // CLUSTER 3: Market Ready (NEW - December 20, 2025)
+  {
+    id: 'why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market',
+    title: 'Why "Market Ready" Is the Only Way to Sell in Today\'s Las Vegas Market',
+    excerpt: 'In a buyer\'s market with rising inventory, being "market ready" isn\'t about getting more money—it\'s about getting your house sold at all.',
+    date: 'December 20, 2025',
+    category: 'Market Ready',
+    isPillar: true
+  },
+  {
+    id: 'concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see',
+    title: 'Concessions Cost More Than Repairs: The Math Every Las Vegas Seller Needs to See',
+    excerpt: 'Thinking of offering a credit instead of doing repairs? The math shows that seller concessions often cost you far more than the actual fix.',
+    date: 'December 20, 2025',
+    category: 'Market Ready'
+  },
+  {
+    id: 'what-buyers-actually-see-when-they-walk-into-your-home',
+    title: 'What Buyers Actually See When They Walk Into Your Home (And Why It Costs You Money)',
+    excerpt: 'You see a functioning home. Buyers see a project list. Understand the psychology of buyer perception and how small issues lead to huge price reductions.',
+    date: 'December 20, 2025',
+    category: 'Buyer Psychology'
+  },
+  {
+    id: 'your-house-might-smell-how-odors-kill-home-sales-las-vegas',
+    title: 'Your House Might Smell (And You Don\'t Even Know It): How Odors Kill Home Sales',
+    excerpt: 'You\'re probably nose-blind to your home\'s odors, but buyers aren\'t. Learn how pet smells, smoke, and mustiness can kill a home sale.',
+    date: 'December 20, 2025',
+    category: 'Home Presentation'
+  },
+  {
+    id: 'which-home-updates-pay-off-when-selling-las-vegas',
+    title: 'The $15,000 That Saves You $50,000: Which Updates Actually Pay Off When Selling',
+    excerpt: 'Not all home updates are created equal. Learn which high-ROI, low-cost updates can save you from massive price reductions in a buyer\'s market.',
+    date: 'December 20, 2025',
+    category: 'Home Updates'
+  },
+  {
+    id: 'cant-afford-to-make-home-market-ready-options-las-vegas',
+    title: 'Can\'t Afford to Make Your Home Market Ready? Here Are Your Real Options',
+    excerpt: 'You know your home needs work to sell, but you don\'t have the cash. Don\'t despair. You have options beyond a traditional listing.',
+    date: 'December 20, 2025',
+    category: 'Selling Options'
+  },
+  {
+    id: 'holding-costs-unsold-home-las-vegas',
+    title: 'Every Month Your House Sits Unsold Costs You $____: The Holding Cost Reality',
+    excerpt: 'The price you see is not the price you get. Learn about the hidden holding costs that eat away at your profit every month your house sits on the market.',
+    date: 'December 20, 2025',
+    category: 'Financial Reality'
+  },
+  {
+    id: 'las-vegas-homes-55-days-on-market-what-it-means',
+    title: 'Las Vegas Homes Now Sit 55 Days on Market—Here\'s What That Means for Your Sale',
+    excerpt: 'The average days on market in Las Vegas has jumped to 55. In a slower market with more inventory, learn what you need to do to stand out.',
+    date: 'December 20, 2025',
+    category: 'Market Data'
+  },
+  {
+    id: 'someone-will-buy-it-as-is-lies-sellers-tell-themselves',
+    title: '"Someone Will Buy It As-Is" and Other Lies Sellers Tell Themselves',
+    excerpt: 'Thinking a buyer will see the "potential" in your fixer-upper? The data says otherwise. Only 28% of buyers even consider a home that needs work.',
+    date: 'December 20, 2025',
+    category: 'Seller Myths'
+  },
+  {
+    id: 'when-making-home-market-ready-isnt-worth-it-las-vegas',
+    title: 'When Making Your Home Market Ready Isn\'t Worth It (And What to Do Instead)',
+    excerpt: 'Sometimes, the cost and time of renovations don\'t make financial sense. Learn when to skip the updates and pursue an alternative selling strategy.',
+    date: 'December 20, 2025',
+    category: 'Strategic Decisions'
+  },
+  // CLUSTER 2: Market Conditions & Stale Listings
   {
     id: 'las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now',
     title: 'Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now',
@@ -77,42 +149,6 @@ const blogPosts = [
     excerpt: 'Cash offers aren\'t your only option. Discover creative solutions like subject-to, seller financing, and fix-and-flip partnerships.',
     date: 'December 18, 2025',
     category: 'Creative Solutions'
-  },
-  // EXISTING POSTS
-  {
-    id: 'calculate-fair-cash-offer',
-    title: 'How to Calculate a Fair Cash Offer - A Complete Breakdown',
-    excerpt: 'Learn the exact formula investors use to calculate cash offers, including ARV, repair costs, holding costs, and profit margins. Full transparency.',
-    date: 'October 19, 2025',
-    category: 'Education'
-  },
-  {
-    id: 'when-cash-offer-bad-deal',
-    title: 'When a Cash Offer is a BAD Deal for You',
-    excerpt: 'Not every homeowner should take a cash offer. Learn when listing traditionally is the better choice and how to know the difference.',
-    date: 'October 19, 2025',
-    category: 'Education'
-  },
-  {
-    id: 'hidden-costs-stale-listings',
-    title: 'The Hidden Costs of Stale Listings - What Your Agent Won\'t Tell You',
-    excerpt: '48% of listings sit unsold for 60+ days. Learn the real cost of a stale listing and why it might be worse than taking a cash offer.',
-    date: 'October 19, 2025',
-    category: 'Market Insights'
-  },
-  {
-    id: 'creative-solutions-selling-home',
-    title: '11+ Creative Solutions for Selling Your Home',
-    excerpt: 'Beyond cash offers and traditional listings, discover 11+ creative ways to sell your home that most sellers don\'t know exist.',
-    date: 'October 19, 2025',
-    category: 'Solutions'
-  },
-  {
-    id: 'truth-about-investors',
-    title: 'The Truth About Real Estate Investors - Market Makers, Not Manipulators',
-    excerpt: 'Investors purchased 27% of homes in Q1 2025. Are we taking over the market, or are we solving a critical problem? The data might surprise you.',
-    date: 'October 19, 2025',
-    category: 'Industry Insights'
   }
 ];
 

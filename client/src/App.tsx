@@ -27,6 +27,18 @@ import IsYourHomeOverpriced from './pages/blog/is-your-home-overpriced-how-to-kn
 import WhenListingGoesStale from './pages/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options';
 import HiddenCostsStaleListing from './pages/blog/hidden-costs-stale-listing';
 
+// Blog Cluster 3: Market Ready (Pillar + 9 Satellites)
+import MarketReadyPillar from './pages/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market';
+import ConcessionsMath from './pages/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see';
+import BuyerPsychology from './pages/blog/what-buyers-actually-see-when-they-walk-into-your-home';
+import HouseSmell from './pages/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas';
+import UpdatesROI from './pages/blog/which-home-updates-pay-off-when-selling-las-vegas';
+import CantAffordRepairs from './pages/blog/cant-afford-to-make-home-market-ready-options-las-vegas';
+import HoldingCosts from './pages/blog/holding-costs-unsold-home-las-vegas';
+import DaysOnMarket from './pages/blog/las-vegas-homes-55-days-on-market-what-it-means';
+import FixerUpperMyth from './pages/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves';
+import NotWorthIt from './pages/blog/when-making-home-market-ready-isnt-worth-it-las-vegas';
+
 function Router() {
   return (
     <Switch>
@@ -52,6 +64,18 @@ function Router() {
       <Route path={"/blog/is-your-home-overpriced-how-to-know-when-to-adjust"} component={IsYourHomeOverpriced} />
       <Route path={"/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options"} component={WhenListingGoesStale} />
       <Route path={"/blog/hidden-costs-stale-listing"} component={HiddenCostsStaleListing} />
+      
+      {/* Blog Cluster 3: Market Ready */}
+      <Route path={"/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market"} component={MarketReadyPillar} />
+      <Route path={"/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see"} component={ConcessionsMath} />
+      <Route path={"/blog/what-buyers-actually-see-when-they-walk-into-your-home"} component={BuyerPsychology} />
+      <Route path={"/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas"} component={HouseSmell} />
+      <Route path={"/blog/which-home-updates-pay-off-when-selling-las-vegas"} component={UpdatesROI} />
+      <Route path={"/blog/cant-afford-to-make-home-market-ready-options-las-vegas"} component={CantAffordRepairs} />
+      <Route path={"/blog/holding-costs-unsold-home-las-vegas"} component={HoldingCosts} />
+      <Route path={"/blog/las-vegas-homes-55-days-on-market-what-it-means"} component={DaysOnMarket} />
+      <Route path={"/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves"} component={FixerUpperMyth} />
+      <Route path={"/blog/when-making-home-market-ready-isnt-worth-it-las-vegas"} component={NotWorthIt} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
