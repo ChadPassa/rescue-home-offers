@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function UpdatesROI() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">The $15,000 That Saves You $50,000: Which Updates Actually Pay Off When Selling</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/which-home-updates-pay-off-when-selling-las-vegas.jpg" 
-            alt="Which Home Updates Pay Off - Freshly painted room with new flooring in Las Vegas home for sale - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="The $15,000 That Saves You $50,000: Which Home Updates Actually Pay Off"
+      description="Not all home updates are worth it. Learn which improvements have the best ROI for Las Vegas sellers and which to skip."
+      image="/images/blog/which-home-updates-pay-off-when-selling-las-vegas.jpg"
+      slug="which-home-updates-pay-off-when-selling-las-vegas"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               In a market where buyers are picky and inventory is high—with <Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline">70% of listings going stale</Link>—the fear of leaving money on the table is real. Many sellers either do too much—spending a fortune on renovations that don't add value—or do too little, leaving their home vulnerable to lowball offers. The key is strategic investment. A relatively small budget, spent wisely, can be the difference between a quick sale and a massive price reduction.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -92,10 +70,6 @@ export default function UpdatesROI() {
               <li><Link to="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see" className="text-[#c9a961] hover:underline">Concessions Cost More Than Repairs: The Math</Link></li>
               <li><Link to="/blog/cant-afford-to-make-home-market-ready-options-las-vegas" className="text-[#c9a961] hover:underline">Can't Afford to Make Your Home Market Ready? Here Are Your Real Options</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function CantAffordRepairs() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Can't Afford to Make Your Home Market Ready? Here Are Your Real Options</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/cant-afford-to-make-home-market-ready-options-las-vegas.jpg" 
-            alt="Can't Afford Home Repairs - Homeowner looking at options for selling a Las Vegas home that needs work - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="Can't Afford to Make Your Home Market Ready? Here Are Your Real Options"
+      description="No cash for repairs? Learn your real options for selling a Las Vegas home that needs work, from cash buyers to creative partnerships."
+      image="/images/blog/cant-afford-to-make-home-market-ready-options-las-vegas.jpg"
+      slug="cant-afford-to-make-home-market-ready-options-las-vegas"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               It's the ultimate seller's dilemma. You understand that in today's market, your home needs to be <Link to="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market" className="text-[#c9a961] hover:underline">market ready</Link> to attract buyers and a fair price. You see the worn carpet, the dated kitchen, and the overgrown landscaping. But when you look at your bank account, you realize you simply don't have the cash to make the necessary improvements.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -87,10 +65,6 @@ export default function CantAffordRepairs() {
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Are Cash Home Buyers in Las Vegas Legit?</Link></li>
               <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Creative Real Estate Solutions Beyond the Cash Offer</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

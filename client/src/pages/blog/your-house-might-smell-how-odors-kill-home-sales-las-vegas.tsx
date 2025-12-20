@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function HouseSmell() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Your House Might Smell (And You Don't Even Know It): How Odors Kill Home Sales</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas.jpg" 
-            alt="Your House Might Smell - Person detecting odors in a Las Vegas home for sale - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="Your House Might Smell (And You Don't Know It): How Odors Kill Home Sales"
+      description="You're nose-blind to your own home. Learn how odors kill home sales and what to do about pet smells, smoke, and other deal-breakers."
+      image="/images/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas.jpg"
+      slug="your-house-might-smell-how-odors-kill-home-sales-las-vegas"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               Here's a difficult truth every home seller needs to hear: your house probably has a smell, and you are the last person who will ever notice it. It's a phenomenon called sensory adaptation, or "nose blindness," and it's one of the most significant and costly mistakes sellers make.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -88,10 +66,6 @@ export default function HouseSmell() {
               <li><Link to="/blog/which-home-updates-pay-off-when-selling-las-vegas" className="text-[#c9a961] hover:underline">The $15,000 That Saves You $50,000: Which Updates Actually Pay Off</Link></li>
               <li><Link to="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market" className="text-[#c9a961] hover:underline">Why "Market Ready" Is the Only Way to Sell</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

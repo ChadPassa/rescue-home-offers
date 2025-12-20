@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function FixerUpperMyth() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">"Someone Will Buy It As-Is" and Other Lies Sellers Tell Themselves</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves.jpg" 
-            alt="Selling As-Is Myth - Wishful thinking about selling a fixer-upper home in Las Vegas Nevada - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title='"Someone Will Buy It As-Is" and Other Lies Sellers Tell Themselves'
+      description="The fixer-upper myth debunked. Why 62% of buyers want move-in ready homes and what it means for sellers hoping to sell as-is."
+      image="/images/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves.jpg"
+      slug="someone-will-buy-it-as-is-lies-sellers-tell-themselves"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               It's a comforting thought, a mantra whispered by homeowners facing a list of needed repairs: "It has good bones. Someone will see the potential and buy it as-is." This is, perhaps, the most common and costly piece of self-deception in real estate. In today's market, hope is not a strategy, and the "as-is" dream is often a financial nightmare.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -81,10 +59,6 @@ export default function FixerUpperMyth() {
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Are Cash Home Buyers in Las Vegas Legit?</Link></li>
               <li><Link to="/blog/cant-afford-to-make-home-market-ready-options-las-vegas" className="text-[#c9a961] hover:underline">Can't Afford to Make Your Home Market Ready? Here Are Your Real Options</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

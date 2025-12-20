@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function NotWorthIt() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">When Making Your Home Market Ready Isn't Worth It (And What to Do Instead)</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/when-making-home-market-ready-isnt-worth-it-las-vegas.jpg" 
-            alt="When Market Ready Isn't Worth It - Crossroads decision for Las Vegas home sellers - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="When Making Your Home Market Ready Isn't Worth It (And What to Do Instead)"
+      description="Sometimes renovation isn't the answer. Learn when market-ready isn't worth it and what alternatives Las Vegas sellers have."
+      image="/images/blog/when-making-home-market-ready-isnt-worth-it-las-vegas.jpg"
+      slug="when-making-home-market-ready-isnt-worth-it-las-vegas"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               For most sellers in today's market, making your home <Link to="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market" className="text-[#c9a961] hover:underline">market ready</Link> is the smartest financial decision. A small investment in strategic updates can prevent huge price reductions and lead to a faster sale. But "most" is not "all." There are specific situations where the math simply doesn't work, and attempting a renovation would be throwing good money after bad.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -84,10 +62,6 @@ export default function NotWorthIt() {
               <li><Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">Are Cash Home Buyers in Las Vegas Legit?</Link></li>
               <li><Link to="/blog/creative-real-estate-solutions-beyond-the-cash-offer" className="text-[#c9a961] hover:underline">Creative Real Estate Solutions Beyond the Cash Offer</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

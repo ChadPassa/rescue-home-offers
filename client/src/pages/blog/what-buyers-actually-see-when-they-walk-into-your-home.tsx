@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function BuyerPsychology() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">What Buyers Actually See When They Walk Into Your Home (And Why It Costs You Money)</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/what-buyers-actually-see-when-they-walk-into-your-home.jpg" 
-            alt="What Buyers Actually See - Couple critically evaluating a home for sale in Las Vegas Nevada - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="What Buyers Actually See When They Walk Into Your Home"
+      description="Understand buyer psychology and what they really see during a home tour. First impressions, red flags, and how to present your Las Vegas home."
+      image="/images/blog/what-buyers-actually-see-when-they-walk-into-your-home.jpg"
+      slug="what-buyers-actually-see-when-they-walk-into-your-home"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               As a homeowner, you see your house as a functional, comfortable space. You've gotten used to the scuff on the baseboard, the slightly dripping faucet, and the faint pet odor in the living room. To you, these are minor quirks. To a potential buyer, they are giant, flashing red flags that scream "work," "money," and "risk."
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -85,10 +63,6 @@ export default function BuyerPsychology() {
               <li><Link to="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see" className="text-[#c9a961] hover:underline">Concessions Cost More Than Repairs: The Math</Link></li>
               <li><Link to="/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas" className="text-[#c9a961] hover:underline">Your House Might Smell (And You Don't Even Know It)</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

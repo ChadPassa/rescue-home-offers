@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function DaysOnMarket() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Las Vegas Homes Now Sit 55 Days on Market—Here's What That Means for Your Sale</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/las-vegas-homes-55-days-on-market-what-it-means.jpg" 
-            alt="55 Days on Market Las Vegas - Calendar showing average time to sell a home in Las Vegas Nevada - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="Las Vegas Homes Now Sit 55 Days on Market: What It Means for Sellers"
+      description="Las Vegas homes now average 55 days on market, up from 39. What this means for sellers and how to position your home to sell faster."
+      image="/images/blog/las-vegas-homes-55-days-on-market-what-it-means.jpg"
+      slug="las-vegas-homes-55-days-on-market-what-it-means"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               There's a number every home seller in Las Vegas needs to know right now: fifty-five. That's the new average for "days on market" (DOM)—the time it takes from listing a home to getting it under contract. Just a year ago, that number was 39. This 41% increase isn't just a statistic; it's a fundamental shift in the market that directly impacts your selling strategy and your wallet.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -86,10 +64,6 @@ export default function DaysOnMarket() {
               <li><Link to="/blog/holding-costs-unsold-home-las-vegas" className="text-[#c9a961] hover:underline">The Hidden Costs of an Unsold Home</Link></li>
               <li><Link to="/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" className="text-[#c9a961] hover:underline">Las Vegas Housing Market 2025: What Every Seller Needs to Know</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

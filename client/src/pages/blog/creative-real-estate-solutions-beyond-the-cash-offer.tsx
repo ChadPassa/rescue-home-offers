@@ -1,42 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function CreativeSolutions() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Creative Solutions</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Creative Real Estate Solutions: Beyond the Cash Offer</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/creative-real-estate-solutions-beyond-the-cash-offer.jpg" 
-            alt="Creative Real Estate Solutions Las Vegas - Modern desert home with colorful pathways showing multiple selling options including cash offer, seller financing, and traditional listing - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="Creative Real Estate Solutions: Beyond the Cash Offer"
+      description="Explore creative real estate solutions beyond traditional sales and cash offers. Subject-to, seller financing, novation, and more explained."
+      image="/images/blog/creative-real-estate-solutions-beyond-the-cash-offer.jpg"
+      slug="creative-real-estate-solutions-beyond-the-cash-offer"
+      category="Sell House Fast"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               When most people think about selling their house, they think about two options: list it with an agent or sell it to a <Link to="/blog/cash-home-buyers-in-las-vegas-are-they-legit" className="text-[#c9a961] hover:underline">cash buyer</Link>. But what if neither of those options works for you? What if you need more money than a cash offer provides, but you can't wait months for a traditional sale in the current <Link to="/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" className="text-[#c9a961] hover:underline">Las Vegas market</Link>?
             </p>
 
@@ -118,28 +93,6 @@ export default function CreativeSolutions() {
                 <li><Link to="/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options" className="text-[#c9a961] hover:underline">When Your Listing Goes Stale</Link></li>
               </ul>
             </div>
-          </div>
-        </div>
-      </article>
-
-      <section className="bg-gray-50 py-12 border-t">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready for Your Second Opinion?</h2>
-          <p className="text-lg text-gray-700 mb-6">
-            Get a free, no-obligation cash offer or schedule a consultation to explore all your options.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#calculator" className="bg-[#c9a961] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#b8860b] transition-colors inline-block text-lg">
-              Get Your Offer Now →
-            </a>
-            <a href="/" className="bg-white text-gray-900 border-2 border-gray-300 px-6 py-4 rounded-lg font-semibold hover:border-[#c9a961] transition-colors">
-              Schedule Consultation
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }

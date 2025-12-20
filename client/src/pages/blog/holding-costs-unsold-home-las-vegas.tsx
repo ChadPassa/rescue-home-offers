@@ -1,39 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useEffect } from 'react';
+import BlogPost from "@/components/BlogPost";
 import { Link } from 'wouter';
 
-export default function HoldingCosts() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function BlogPostPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-4">
-            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
-          </div>
-          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Every Month Your House Sits Unsold Costs You $____: The Holding Cost Reality</h1>
-          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 max-w-4xl py-8">
-        <div className="rounded-xl overflow-hidden shadow-lg">
-          <img 
-            src="/images/blog/holding-costs-unsold-home-las-vegas.jpg" 
-            alt="Holding Costs of Unsold Home - Calendar showing daily costs of an unsold Las Vegas property - Rescue Home Offers"
-            className="w-full h-64 md:h-96 object-cover"
-          />
-        </div>
-      </div>
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed mb-6">
+    <BlogPost
+      title="Every Month Your House Sits Unsold Costs You $____"
+      description="Calculate the real holding costs of an unsold Las Vegas home. Mortgage, taxes, insurance, utilities - see what each month is costing you."
+      image="/images/blog/holding-costs-unsold-home-las-vegas.jpg"
+      slug="holding-costs-unsold-home-las-vegas"
+      category="Market Ready"
+      date="December 20, 2025"
+    >
+<p className="text-lg leading-relaxed mb-6">
               When you're selling a house, it's easy to focus on the final sale price. But one of the most significant and overlooked factors in your total profit is time. Every single day your house sits on the market, it is actively costing you money. These are your "holding costs," and they can turn a seemingly good offer into a financial loss if your home lingers for too long.
             </p>
             <p className="text-lg leading-relaxed mb-6">
@@ -121,10 +99,6 @@ export default function HoldingCosts() {
               <li><Link to="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" className="text-[#c9a961] hover:underline">Why 70% of Homes Are Sitting Unsold</Link></li>
               <li><Link to="/blog/las-vegas-homes-55-days-on-market-what-it-means" className="text-[#c9a961] hover:underline">Las Vegas Homes Now Sit 55 Days on Market—Here's What That Means</Link></li>
             </ul>
-          </div>
-        </div>
-      </article>
-      <Footer />
-    </div>
+    </BlogPost>
   );
 }
