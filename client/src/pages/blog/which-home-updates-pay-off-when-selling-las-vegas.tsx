@@ -8,7 +8,7 @@ const UpdatesROI = () => {
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>
         <img src="/images/blog/which-home-updates-pay-off-when-selling-las-vegas.jpg" alt="A freshly painted room with new flooring, representing a high-ROI home update." className="rounded-lg shadow-lg" />
 
-        <p>In a market where buyers are picky and inventory is high, the fear of leaving money on the table is real. Many sellers either do too much—spending a fortune on renovations that don’t add value—or do too little, leaving their home vulnerable to lowball offers. The key is strategic investment. A relatively small budget, spent wisely, can be the difference between a quick sale and a massive price reduction.</p>
+        <p>In a market where buyers are picky and inventory is high—with <a href="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis">70% of listings going stale</a>—the fear of leaving money on the table is real. Many sellers either do too much—spending a fortune on renovations that don’t add value—or do too little, leaving their home vulnerable to lowball offers. The key is strategic investment. A relatively small budget, spent wisely, can be the difference between a quick sale and a massive price reduction.</p>
 
         <p>The goal isn't to flip your own house. The goal is to eliminate the red flags that cause buyers to hesitate or negotiate hard. It’s about spending $15,000 on the right things to prevent a buyer from demanding a $50,000 price cut. This is the core principle of creating a <a href="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market">market-ready home</a>.</p>
 

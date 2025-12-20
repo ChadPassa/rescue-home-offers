@@ -32,7 +32,7 @@ const HouseSmell = () => {
 
         <p>Like offering a credit for repairs, many sellers think they can just tell buyers, "We'll have the carpets cleaned." This doesn't work. The buyer has already formed a negative emotional connection to your home. They will either walk away or make a significantly lower offer to compensate for the perceived problem.</p>
 
-        <p>A professional deep clean, new carpet, and a fresh coat of odor-blocking paint might cost you $10,000. But a buyer who smells a problem might negotiate $40,000 off your asking price, if they even make an offer at all. This is a clear example of how <a href="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see">concessions cost more than repairs</a>.</p>
+        <p>A professional deep clean, new carpet, and a fresh coat of odor-blocking paint might cost you $10,000. But a buyer who smells a problem might negotiate $40,000 off your asking price, if they even make an offer at all. It's one of the <a href="/blog/hidden-costs-stale-listing">hidden costs of a stale listing</a> that most sellers never see coming. This is a clear example of how <a href="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see">concessions cost more than repairs</a>.</p>
 
         <h2>How to Fight Nose Blindness</h2>
 

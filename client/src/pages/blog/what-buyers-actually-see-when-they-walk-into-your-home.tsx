@@ -41,7 +41,7 @@ const BuyerPsychology = () => {
 
         <p>A buyer who can walk in and immediately start placing their own furniture in their mind is a buyer who is emotionally invested. A buyer who walks in and starts a mental checklist of repairs is a buyer who is already thinking about their exit strategy or a lowball offer.</p>
 
-        <p>Don’t let your familiarity with your home’s quirks blind you to how a stranger will see it. Before you list, have a brutally honest friend—or a real estate professional—walk through and point out every single flaw. Seeing your home through a buyer’s eyes is the first step to a faster, more profitable sale.</p>
+        <p>Don't let your familiarity with your home's quirks blind you to how a stranger will see it. This perception gap is a major reason <a href="/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis">why so many homes are sitting unsold</a> right now. Before you list, have a brutally honest friend—or a real estate professional—walk through and point out every single flaw. Seeing your home through a buyer’s eyes is the first step to a faster, more profitable sale.</p>
 
         <hr />
 
