@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ShareButtons from "@/components/ShareButtons";
 import { useEffect } from 'react';
 import { Link } from 'wouter';
 import { Helmet } from 'react-helmet-async';
@@ -69,6 +70,9 @@ export default function BlogPost({
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">{category}</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">{title}</h1>
           <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • {date}</p>
+          
+          {/* Share Buttons - Below author line */}
+          <ShareButtons url={fullUrl} title={title} description={description} />
         </div>
       </section>
 
@@ -86,6 +90,12 @@ export default function BlogPost({
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
             {children}
+          </div>
+          
+          {/* Share Buttons - At the end of article */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <p className="text-gray-600 mb-2">Found this helpful? Share it with someone who needs it.</p>
+            <ShareButtons url={fullUrl} title={title} description={description} />
           </div>
         </div>
       </article>
