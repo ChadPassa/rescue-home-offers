@@ -27,7 +27,7 @@ export default function CashHomeBuyers() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/cash-home-buyers-in-las-vegas-are-they-legit.jpg" 
-            alt="Cash Home Buyers Las Vegas - Are They Legit?"
+            alt="Cash Home Buyers Las Vegas Nevada - Hands exchanging house keys and cash at closing table with modern Las Vegas home in background - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

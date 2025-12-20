@@ -27,7 +27,7 @@ export default function StaleListing70Percent() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis.jpg" 
-            alt="Stale Listing Crisis - 70% of Homes Unsold"
+            alt="70 Percent of Las Vegas Homes Unsold Stale Listing Crisis - Aerial view of Las Vegas Nevada neighborhood with multiple For Sale signs showing housing market inventory crisis - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

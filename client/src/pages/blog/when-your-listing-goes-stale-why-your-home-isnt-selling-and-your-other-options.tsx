@@ -28,8 +28,8 @@ export default function BlogPost() {
       <div className="container mx-auto px-4 max-w-4xl py-8">
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
-            src="/images/blog/listing-goes-stale.jpg" 
-            alt="Weathered FOR SALE sign with PRICE REDUCED - stale listing"
+            src="/images/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options.jpg" 
+            alt="When Your Listing Goes Stale Las Vegas - Weathered faded For Sale sign in front of Las Vegas home with calendar showing months passing, home not selling - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

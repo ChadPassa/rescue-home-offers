@@ -28,8 +28,8 @@ export default function BlogPost() {
       <div className="container mx-auto px-4 max-w-4xl py-8">
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
-            src="/images/blog/home-overpriced.jpg" 
-            alt="Price reduction sign on home - Is your home overpriced"
+            src="/images/blog/is-your-home-overpriced-how-to-know-when-to-adjust.jpg" 
+            alt="Is Your Home Overpriced Las Vegas - For Sale sign with crossed out high price tag as real estate agent reviews paperwork with homeowner at luxury Las Vegas property - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

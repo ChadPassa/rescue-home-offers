@@ -27,7 +27,7 @@ export default function HowToStopForeclosure() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide.jpg" 
-            alt="Stop Foreclosure in Las Vegas - Get Help Now"
+            alt="Stop Foreclosure Las Vegas Nevada - Worried homeowner in front of Las Vegas home with For Sale Pending sign as sunlight breaks through storm clouds symbolizing hope - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

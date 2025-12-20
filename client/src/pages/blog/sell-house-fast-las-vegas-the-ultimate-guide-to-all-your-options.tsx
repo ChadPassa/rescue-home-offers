@@ -27,7 +27,7 @@ export default function SellHouseFastLasVegas() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options.jpg" 
-            alt="Beautiful Las Vegas home with SOLD sign - Sell House Fast Las Vegas"
+            alt="Sell House Fast Las Vegas - Beautiful desert home with SOLD sign, palm trees, and cactus landscaping in Las Vegas Nevada suburb - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

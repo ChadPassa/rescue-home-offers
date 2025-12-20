@@ -27,7 +27,7 @@ export default function CreativeSolutions() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/creative-real-estate-solutions-beyond-the-cash-offer.jpg" 
-            alt="Creative Real Estate Solutions Las Vegas"
+            alt="Creative Real Estate Solutions Las Vegas - Modern desert home with colorful pathways showing multiple selling options including cash offer, seller financing, and traditional listing - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

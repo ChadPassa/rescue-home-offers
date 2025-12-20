@@ -27,7 +27,7 @@ export default function LasVegasMarket2025() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now.jpg" 
-            alt="Las Vegas Housing Market 2025 - What Sellers Need to Know"
+            alt="Las Vegas Housing Market 2025 - Aerial view of Las Vegas Strip skyline with suburban homes in foreground at golden hour showing Nevada real estate market - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

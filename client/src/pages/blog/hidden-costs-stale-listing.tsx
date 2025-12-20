@@ -27,7 +27,7 @@ export default function HiddenCosts() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/hidden-costs-stale-listing.jpg" 
-            alt="Calendar with money flying away - hidden costs of stale listing"
+            alt="Hidden Costs of Stale Listing Las Vegas - Las Vegas home with transparent dollar signs and money floating away symbolizing hidden costs of unsold property - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>

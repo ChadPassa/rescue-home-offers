@@ -27,7 +27,7 @@ export default function InheritedProperty() {
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide.jpg" 
-            alt="Inherited Property Las Vegas - Complete Guide"
+            alt="Selling Inherited Property Las Vegas Nevada - Empty living room with moving boxes and family photo on mantle, soft natural light streaming through windows - Rescue Home Offers"
             className="w-full h-64 md:h-96 object-cover"
           />
         </div>
