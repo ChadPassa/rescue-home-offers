@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const CantAffordRepairs = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Can't Afford to Make Your Home Market Ready? Your Real Options | Rescue Home Offers</title>
-        <meta name="description" content="You know your home needs work to sell, but you don't have the cash. Don't despair. You have options beyond a traditional listing. Learn about them here." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Can't Afford to Make Your Home Market Ready? Here Are Your Real Options</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const UpdatesROI = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>The $15,000 That Saves You $50,000: Which Updates Pay Off | Rescue Home Offers</title>
-        <meta name="description" content="Not all home updates are created equal when selling. Learn which high-ROI, low-cost updates can save you from massive price reductions in a buyer's market." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>The $15,000 That Saves You $50,000: Which Updates Actually Pay Off When Selling</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

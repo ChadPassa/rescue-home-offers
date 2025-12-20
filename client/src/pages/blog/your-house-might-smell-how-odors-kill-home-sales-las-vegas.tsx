@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const HouseSmell = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Your House Might Smell (And You Don't Know It) | Rescue Home Offers</title>
-        <meta name="description" content="You're probably nose-blind to your home's odors, but buyers aren't. Learn how pet smells, smoke, and mustiness can kill a home sale and what to do about it." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Your House Might Smell (And You Don't Even Know It): How Odors Kill Home Sales</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

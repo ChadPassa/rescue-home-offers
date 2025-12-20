@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const HoldingCosts = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Every Month Your House Sits Unsold Costs You Thousands | Rescue Home Offers</title>
-        <meta name="description" content="The price you see is not the price you get. Learn about the hidden holding costs—mortgage, taxes, insurance, utilities—that eat away at your profit every month your house sits on the market." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Every Month Your House Sits Unsold Costs You $____: The Holding Cost Reality</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

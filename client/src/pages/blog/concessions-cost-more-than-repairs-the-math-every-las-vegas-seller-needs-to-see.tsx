@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const ConcessionsMath = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Concessions Cost More Than Repairs: The Math for Las Vegas Sellers | Rescue Home Offers</title>
-        <meta name="description" content="Thinking of offering a credit instead of doing repairs? The math shows that seller concessions often cost you far more. See the numbers before you negotiate." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Concessions Cost More Than Repairs: The Math Every Las Vegas Seller Needs to See</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

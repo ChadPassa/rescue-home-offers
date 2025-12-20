@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const BuyerPsychology = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>What Buyers Actually See When They Walk Into Your Home | Rescue Home Offers</title>
-        <meta name="description" content="You see a functioning home. Buyers see a project list. Understand the psychology of buyer perception and how small issues can lead to huge price reductions." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>What Buyers Actually See When They Walk Into Your Home (And Why It Costs You Money)</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

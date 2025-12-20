@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const DaysOnMarket = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Las Vegas Homes Now Sit 55 Days on Market—What That Means for Your Sale | Rescue Home Offers</title>
-        <meta name="description" content="The average days on market in Las Vegas has jumped to 55. In a slower market with more inventory, learn what you need to do to stand out and sell quickly." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Las Vegas Homes Now Sit 55 Days on Market—Here's What That Means for Your Sale</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const MarketReadyPillar = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>Why "Market Ready" Is the Only Way to Sell in Today's Las Vegas Market | Rescue Home Offers</title>
-        <meta name="description" content="In a buyer's market with rising inventory, being 'market ready' isn't about getting more money—it's about getting your house sold at all. Learn why turnkey homes are the only ones selling in Las Vegas right now." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>Why "Market Ready" Is the Only Way to Sell in Today's Las Vegas Market</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>

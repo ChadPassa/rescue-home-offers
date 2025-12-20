@@ -1,13 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const NotWorthIt = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
-        <title>When Making Your Home Market Ready Isn't Worth It | Rescue Home Offers</title>
-        <meta name="description" content="Sometimes, the cost and time of renovations don't make financial sense. Learn when to skip the updates and pursue an alternative selling strategy." />
-      </Helmet>
       <article className="prose lg:prose-xl mx-auto">
         <h1>When Making Your Home Market Ready Isn't Worth It (And What to Do Instead)</h1>
         <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>
