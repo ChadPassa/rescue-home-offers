@@ -1,16 +1,10 @@
 [build]
-  publish = "client/dist"
+  publish = "dist/public"
   command = "pnpm run build"
 
-# Serve static blog OG files for social media crawlers
-# These take precedence over the SPA fallback
-[[redirects]]
-  from = "/blog/*"
-  to = "/blog/:splat/index.html"
-  status = 200
-  force = false
-
-# SPA fallback for client-side routing (only if no static file exists)
+# SPA fallback for client-side routing
+# Static files in /blog/* folders will be served automatically before this fallback
+# because force = false means "only redirect if no matching file exists"
 [[redirects]]
   from = "/*"
   to = "/index.html"
