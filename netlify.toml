@@ -2,12 +2,15 @@
   publish = "client/dist"
   command = "pnpm run build"
 
+# Edge function for social media OG tags - MUST run before redirects
 [[edge_functions]]
   path = "/blog/*"
   function = "og-tags"
 
 # SPA fallback for client-side routing
+# Edge functions run BEFORE redirects, so this is fine
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
