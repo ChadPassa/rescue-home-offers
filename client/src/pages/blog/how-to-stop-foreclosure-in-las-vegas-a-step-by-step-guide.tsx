@@ -19,7 +19,7 @@ export default function HowToStopForeclosure() {
           </div>
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Foreclosure</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">How to Stop Foreclosure in Las Vegas: A Step-by-Step Guide</h1>
-          <p className="text-gray-500 mt-4">By England Hart • December 18, 2025</p>
+          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
         </div>
       </section>
 
