@@ -1,68 +1,97 @@
-import React from 'react';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { useEffect } from 'react';
+import { Link } from 'wouter';
 
-const HouseSmell = () => {
+export default function HouseSmell() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <article className="prose lg:prose-xl mx-auto">
-        <h1>Your House Might Smell (And You Don't Even Know It): How Odors Kill Home Sales</h1>
-        <p className="text-sm text-gray-500">By England Hart, "your second opinion" • December 20, 2025</p>
-        <img src="/images/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas.jpg" alt="A person sniffing the air in a room with a concerned look, symbolizing home odors." className="rounded-lg shadow-lg" />
+    <div className="min-h-screen bg-white">
+      <Header />
+      <section className="bg-gradient-to-b from-gray-50 to-white border-b py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="mb-4">
+            <Link to="/blog" className="text-[#c9a961] hover:underline">← Back to Blog</Link>
+          </div>
+          <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Ready</span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Your House Might Smell (And You Don't Even Know It): How Odors Kill Home Sales</h1>
+          <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 20, 2025</p>
+        </div>
+      </section>
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <div className="rounded-xl overflow-hidden shadow-lg">
+          <img 
+            src="/images/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas.jpg" 
+            alt="Your House Might Smell - Person detecting odors in a Las Vegas home for sale - Rescue Home Offers"
+            className="w-full h-64 md:h-96 object-cover"
+          />
+        </div>
+      </div>
+      <article className="py-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
+            <p className="text-lg leading-relaxed mb-6">
+              Here's a difficult truth every home seller needs to hear: your house probably has a smell, and you are the last person who will ever notice it. It's a phenomenon called sensory adaptation, or "nose blindness," and it's one of the most significant and costly mistakes sellers make.
+            </p>
+            <p className="text-lg leading-relaxed mb-6">
+              You may not smell the lingering evidence of last night's dinner, your beloved golden retriever, or that slightly musty armchair in the corner. But a potential buyer, walking in for the first time, will smell it instantly. And in the world of real estate, a bad smell is more than just unpleasant—it's a deal-killer.
+            </p>
 
-        <p>Here’s a difficult truth every home seller needs to hear: your house probably has a smell, and you are the last person who will ever notice it. It’s a phenomenon called sensory adaptation, or “nose blindness,” and it’s one of the most significant and costly mistakes sellers make.</p>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">The Primal Power of Smell</h2>
+            <p className="text-lg leading-relaxed mb-6">
+              Smell is the most primal of our senses, directly linked to the parts of the brain responsible for memory and emotion. A pleasant smell (like fresh bread or clean laundry) can create an instant feeling of warmth and home. An unpleasant smell does the exact opposite. It triggers a visceral, negative reaction that is almost impossible to overcome with logic.
+            </p>
+            <p className="text-lg leading-relaxed mb-6">
+              When a buyer smells something off, their brain doesn't say, "This house needs to be aired out." It says, "This house is dirty. This house is not well-maintained. What other problems are hiding here?" It immediately erodes trust and makes them view everything else with suspicion. As we've discussed about <Link to="/blog/what-buyers-actually-see-when-they-walk-into-your-home" className="text-[#c9a961] hover:underline">what buyers actually see</Link>, their perception becomes their reality.
+            </p>
 
-        <p>You may not smell the lingering evidence of last night’s dinner, your beloved golden retriever, or that slightly musty armchair in the corner. But a potential buyer, walking in for the first time, will smell it instantly. And in the world of real estate, a bad smell is more than just unpleasant—it’s a deal-killer.</p>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">The Most Common Culprits</h2>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
+              <li className="text-lg leading-relaxed"><strong>Pets:</strong> You love your furry family members, but their dander and oils get trapped in carpets, furniture, and even the paint on your walls.</li>
+              <li className="text-lg leading-relaxed"><strong>Smoke:</strong> Cigarette smoke is notoriously difficult to remove, seeping into every porous surface of a home.</li>
+              <li className="text-lg leading-relaxed"><strong>Cooking Odors:</strong> Strong spices, fried foods, and pungent ingredients can linger for days or weeks.</li>
+              <li className="text-lg leading-relaxed"><strong>Must and Mildew:</strong> A damp, musty smell signals a potential moisture problem, which is a massive red flag for buyers.</li>
+              <li className="text-lg leading-relaxed"><strong>Old Age:</strong> Sometimes, old houses just have a distinct, stale smell from years of accumulated dust and life.</li>
+            </ul>
 
-        <h2>The Primal Power of Smell</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">The Costly Mistake of Ignoring Odors</h2>
+            <p className="text-lg leading-relaxed mb-6">
+              Like offering a credit for repairs, many sellers think they can just tell buyers, "We'll have the carpets cleaned." This doesn't work. The buyer has already formed a negative emotional connection to your home. They will either walk away or make a significantly lower offer to compensate for the perceived problem.
+            </p>
+            <p className="text-lg leading-relaxed mb-6">
+              A professional deep clean, new carpet, and a fresh coat of odor-blocking paint might cost you $10,000. But a buyer who smells a problem might negotiate $40,000 off your asking price, if they even make an offer at all. It's one of the <Link to="/blog/hidden-costs-stale-listing" className="text-[#c9a961] hover:underline">hidden costs of a stale listing</Link> that most sellers never see coming. This is a clear example of how <Link to="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see" className="text-[#c9a961] hover:underline">concessions cost more than repairs</Link>.
+            </p>
 
-        <p>Smell is the most primal of our senses, directly linked to the parts of the brain responsible for memory and emotion. A pleasant smell (like fresh bread or clean laundry) can create an instant feeling of warmth and home. An unpleasant smell does the exact opposite. It triggers a visceral, negative reaction that is almost impossible to overcome with logic.</p>
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-6">How to Fight Nose Blindness</h2>
+            <ol className="list-decimal pl-6 mb-6 space-y-3">
+              <li className="text-lg leading-relaxed"><strong>Get a Second Opinion:</strong> This is non-negotiable. Ask a friend, neighbor, or your real estate agent to come over for the express purpose of giving you an honest smell assessment. Tell them not to be polite.</li>
+              <li className="text-lg leading-relaxed"><strong>Deep Clean Everything:</strong> This means professionally cleaning carpets, draperies, and upholstery. Wash walls with a mild cleaning solution.</li>
+              <li className="text-lg leading-relaxed"><strong>Paint is Your Best Friend:</strong> A fresh coat of paint (using an odor-blocking primer first) is one of the most effective ways to neutralize smells.</li>
+              <li className="text-lg leading-relaxed"><strong>Ozone Treatment:</strong> For severe odors like smoke, a professional ozone generator treatment can be highly effective, but the house must be vacant during the process.</li>
+            </ol>
+            <p className="text-lg leading-relaxed mb-6">
+              Tackling odors is a fundamental part of making your home <Link to="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market" className="text-[#c9a961] hover:underline">market ready</Link>. Don't let something as simple as a smell cost you a sale or tens of thousands of dollars.
+            </p>
 
-        <p>When a buyer smells something off, their brain doesn't say, "This house needs to be aired out." It says, "This house is dirty. This house is not well-maintained. What other problems are hiding here?" It immediately erodes trust and makes them view everything else with suspicion. As we've discussed about <a href="/blog/what-buyers-actually-see-when-they-walk-into-your-home">what buyers actually see</a>, their perception becomes their reality.</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 my-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Worried your home might have a smell you can't detect?</h3>
+              <p className="text-lg text-gray-700 mb-4">This is a core part of our Second Opinion service. We provide a brutally honest assessment of your home's presentation, including any potential odor issues, and give you a clear plan to address them.</p>
+              <a href="/#calculator" className="inline-block bg-[#c9a961] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8860b] transition-colors">Get Your Second Opinion</a>
+            </div>
 
-        <h2>The Most Common Culprits</h2>
-
-        <ul>
-          <li><strong>Pets:</strong> You love your furry family members, but their dander and oils get trapped in carpets, furniture, and even the paint on your walls.</li>
-          <li><strong>Smoke:</strong> Cigarette smoke is notoriously difficult to remove, seeping into every porous surface of a home.</li>
-          <li><strong>Cooking Odors:</strong> Strong spices, fried foods, and pungent ingredients can linger for days or weeks.</li>
-          <li><strong>Must and Mildew:</strong> A damp, musty smell signals a potential moisture problem, which is a massive red flag for buyers.</li>
-          <li><strong>Old Age:</strong> Sometimes, old houses just have a distinct, stale smell from years of accumulated dust and life.</li>
-        </ul>
-
-        <h2>The Costly Mistake of Ignoring Odors</h2>
-
-        <p>Like offering a credit for repairs, many sellers think they can just tell buyers, "We'll have the carpets cleaned." This doesn't work. The buyer has already formed a negative emotional connection to your home. They will either walk away or make a significantly lower offer to compensate for the perceived problem.</p>
-
-        <p>A professional deep clean, new carpet, and a fresh coat of odor-blocking paint might cost you $10,000. But a buyer who smells a problem might negotiate $40,000 off your asking price, if they even make an offer at all. It's one of the <a href="/blog/hidden-costs-stale-listing">hidden costs of a stale listing</a> that most sellers never see coming. This is a clear example of how <a href="/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see">concessions cost more than repairs</a>.</p>
-
-        <h2>How to Fight Nose Blindness</h2>
-
-        <ol>
-          <li><strong>Get a Second Opinion:</strong> This is non-negotiable. Ask a friend, neighbor, or your real estate agent to come over for the express purpose of giving you an honest smell assessment. Tell them not to be polite.</li>
-          <li><strong>Deep Clean Everything:</strong> This means professionally cleaning carpets, draperies, and upholstery. Wash walls with a mild cleaning solution.</li>
-          <li><strong>Paint is Your Best Friend:</strong> A fresh coat of paint (using an odor-blocking primer first) is one of the most effective ways to neutralize smells.</li>
-          <li><strong>Ozone Treatment:</strong> For severe odors like smoke, a professional ozone generator treatment can be highly effective, but the house must be vacant during the process.</li>
-        </ol>
-
-        <p>Tackling odors is a fundamental part of making your home <a href="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market">market ready</a>. Don't let something as simple as a smell cost you a sale or tens of thousands of dollars. </p>
-
-        <hr />
-
-        <h3>Worried your home might have a smell you can't detect?</h3>
-        <p>This is a core part of our Second Opinion service. We provide a brutally honest assessment of your home's presentation, including any potential odor issues, and give you a clear plan to address them.</p>
-        {/* CTA Button would go here */}
-
-        <hr />
-
-        <h4>Related Articles</h4>
-        <ul>
-          <li><a href="/blog/what-buyers-actually-see-when-they-walk-into-your-home">What Buyers Actually See When They Walk Into Your Home</a></li>
-          <li><a href="/blog/which-home-updates-pay-off-when-selling-las-vegas">The $15,000 That Saves You $50,000: Which Updates Actually Pay Off</a></li>
-          <li><a href="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market">Why "Market Ready" Is the Only Way to Sell</a></li>
-        </ul>
-
+            <h3 className="text-xl font-bold text-gray-900 mt-10 mb-4">Related Articles</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
+              <li><Link to="/blog/what-buyers-actually-see-when-they-walk-into-your-home" className="text-[#c9a961] hover:underline">What Buyers Actually See When They Walk Into Your Home</Link></li>
+              <li><Link to="/blog/which-home-updates-pay-off-when-selling-las-vegas" className="text-[#c9a961] hover:underline">The $15,000 That Saves You $50,000: Which Updates Actually Pay Off</Link></li>
+              <li><Link to="/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market" className="text-[#c9a961] hover:underline">Why "Market Ready" Is the Only Way to Sell</Link></li>
+            </ul>
+          </div>
+        </div>
       </article>
+      <Footer />
     </div>
   );
-};
-
-export default HouseSmell;
+}
