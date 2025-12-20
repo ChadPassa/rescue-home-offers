@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function BlogPost() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function BlogPost() {
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Stale Listings</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">When Your Listing Goes Stale: Why Your Home Isn't Selling (and Your Other Options)</h1>
           <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
+          <ShareButtons url="https://rescuehomeoffers.com/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options" title="When Your Listing Goes Stale: Why Your Home Isn't Selling and Your Other Options" />
         </div>
       </section>
 

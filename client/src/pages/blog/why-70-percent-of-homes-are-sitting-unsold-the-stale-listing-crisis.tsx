@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function StaleListing70Percent() {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function StaleListing70Percent() {
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Stale Listings</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Why 70% of Homes Are Sitting Unsold: The Stale Listing Crisis</h1>
           <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
+          <ShareButtons url="https://rescuehomeoffers.com/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis" title="Why 70% of Homes Are Sitting Unsold: The Stale Listing Crisis" />
         </div>
       </section>
 

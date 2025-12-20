@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function HiddenCosts() {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function HiddenCosts() {
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Stale Listings</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">The Hidden Costs of a Stale Listing: What Your Agent Won't Tell You</h1>
           <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
+          <ShareButtons url="https://rescuehomeoffers.com/blog/hidden-costs-stale-listing" title="The Hidden Costs of a Stale Listing: What Your Agent Won't Tell You" />
         </div>
       </section>
 
@@ -97,7 +99,12 @@ export default function HiddenCosts() {
           
           <p>Don't let your equity bleed away one day at a time. If you're tired of the waiting game and the endless talk of "price improvements," it's time for a new conversation.</p>
 
-          </div><div className="mt-12 p-6 bg-gray-50 rounded-2xl">
+          </div>
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <p className="text-gray-600 mb-2">Found this helpful? Share it with someone who needs it.</p>
+            <ShareButtons url="https://rescuehomeoffers.com/blog/hidden-costs-stale-listing" title="The Hidden Costs of a Stale Listing: What Your Agent Won't Tell You" />
+          </div>
+          <div className="mt-12 p-6 bg-gray-50 rounded-2xl">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>
             <ul className="space-y-3">
               <li><Link to="/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options" className="text-[#c9a961] hover:underline">Sell House Fast Las Vegas: The Ultimate Guide</Link></li>

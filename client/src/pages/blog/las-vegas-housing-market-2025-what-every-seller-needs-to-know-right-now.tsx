@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function LasVegasMarket2025() {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function LasVegasMarket2025() {
           <span className="text-xs font-semibold text-[#c9a961] bg-[#c9a961]/10 px-3 py-1 rounded-full">Market Conditions</span>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now</h1>
           <p className="text-gray-500 mt-4">By England Hart, <em>"your second opinion"</em> • December 18, 2025</p>
+          <ShareButtons url="https://rescuehomeoffers.com/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now" title="Las Vegas Housing Market 2025: What Every Seller Needs to Know Right Now" />
         </div>
       </section>
 
