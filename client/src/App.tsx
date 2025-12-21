@@ -77,6 +77,28 @@ function Router() {
       <Route path={"/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves"} component={FixerUpperMyth} />
       <Route path={"/blog/when-making-home-market-ready-isnt-worth-it-las-vegas"} component={NotWorthIt} />
       
+      {/* Duplicate routes for /app/blog/* - used by static OG file redirects from social media */}
+      <Route path={"/app/blog/sell-house-fast-las-vegas-the-ultimate-guide-to-all-your-options"} component={SellHouseFastLasVegas} />
+      <Route path={"/app/blog/how-to-stop-foreclosure-in-las-vegas-a-step-by-step-guide"} component={HowToStopForeclosure} />
+      <Route path={"/app/blog/cash-home-buyers-in-las-vegas-are-they-legit"} component={CashHomeBuyers} />
+      <Route path={"/app/blog/selling-an-inherited-property-in-las-vegas-the-complete-guide"} component={SellingInheritedProperty} />
+      <Route path={"/app/blog/creative-real-estate-solutions-beyond-the-cash-offer"} component={CreativeRealEstateSolutions} />
+      <Route path={"/app/blog/las-vegas-housing-market-2025-what-every-seller-needs-to-know-right-now"} component={LasVegasHousingMarket2025} />
+      <Route path={"/app/blog/why-70-percent-of-homes-are-sitting-unsold-the-stale-listing-crisis"} component={StaleListingCrisis} />
+      <Route path={"/app/blog/is-your-home-overpriced-how-to-know-when-to-adjust"} component={IsYourHomeOverpriced} />
+      <Route path={"/app/blog/when-your-listing-goes-stale-why-your-home-isnt-selling-and-your-other-options"} component={WhenListingGoesStale} />
+      <Route path={"/app/blog/hidden-costs-stale-listing"} component={HiddenCostsStaleListing} />
+      <Route path={"/app/blog/why-market-ready-is-the-only-way-to-sell-in-todays-las-vegas-market"} component={MarketReadyPillar} />
+      <Route path={"/app/blog/concessions-cost-more-than-repairs-the-math-every-las-vegas-seller-needs-to-see"} component={ConcessionsMath} />
+      <Route path={"/app/blog/what-buyers-actually-see-when-they-walk-into-your-home"} component={BuyerPsychology} />
+      <Route path={"/app/blog/your-house-might-smell-how-odors-kill-home-sales-las-vegas"} component={HouseSmell} />
+      <Route path={"/app/blog/which-home-updates-pay-off-when-selling-las-vegas"} component={UpdatesROI} />
+      <Route path={"/app/blog/cant-afford-to-make-home-market-ready-options-las-vegas"} component={CantAffordRepairs} />
+      <Route path={"/app/blog/holding-costs-unsold-home-las-vegas"} component={HoldingCosts} />
+      <Route path={"/app/blog/las-vegas-homes-55-days-on-market-what-it-means"} component={DaysOnMarket} />
+      <Route path={"/app/blog/someone-will-buy-it-as-is-lies-sellers-tell-themselves"} component={FixerUpperMyth} />
+      <Route path={"/app/blog/when-making-home-market-ready-isnt-worth-it-las-vegas"} component={NotWorthIt} />
+      
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
