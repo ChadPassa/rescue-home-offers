@@ -2,6 +2,14 @@
   publish = "dist/public"
   command = "pnpm run build"
 
+# When ?app=1 is present, serve the React SPA (bypasses static OG files)
+[[redirects]]
+  from = "/blog/*"
+  to = "/index.html"
+  status = 200
+  force = true
+  conditions = {Query = {app = "1"}}
+
 # SPA fallback for client-side routing
 # Static files in /blog/* folders will be served automatically before this fallback
 # because force = false means "only redirect if no matching file exists"
